@@ -43,6 +43,10 @@ html, body {
     padding: 30px 40px;
 }
 
+.informacion, .especies_animales, h2{
+    margin-bottom: 10px;
+}
+
 .informacion, .especies_animales p{
     font-family: 'Calibri'; /* Letra Calibri para etiqueta p */
 }
@@ -50,7 +54,7 @@ html, body {
 @media screen and (max-width:768px){
     .contenido{
         display: grid;
-        grid-template-columns: 1f;
+        grid-template-columns: 1fr;
     }
     
 }
