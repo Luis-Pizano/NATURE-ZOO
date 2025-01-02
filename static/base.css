@@ -117,6 +117,7 @@ ul li {
     font-weight: bold;
 }
 
+/* ========================== CONTENEDOR DE LOS LINKS  ========================== */
 .dropdown-content {
     display: none; /* Ocultar el menú por defecto */
     position: absolute;
@@ -130,12 +131,13 @@ ul li {
     left: 50%; /* Posiciona el menú horizontalmente en el centro del botón */
     transform: translateX(-50%); /* Ajusta para centrar menu desplegable */
 }
+/* ========================== CONTENEDOR DE LOS LINKS END ========================== */
 
 .dropdown-content a {
     color: white;
-    padding: 12px 16px;
+    padding: 12px 16px; /* Espaciado interno de los elementos con respecto a su contenedor*/
     text-decoration: none;
-    display: block;
+    display: block; /* Hace que los elementos a se separen de una mejor forma, con la ayuda de padding*/
 }
 
 .dropdown-content a:hover {
@@ -170,4 +172,35 @@ ul li {
     .dropdown-content {
         min-width: 200px; /* Ajustar ancho para pantallas pequeñas */
     }
+}
+
+.admin_cuentas{
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+}
+
+.admin_cuentas a{
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown_cuentas{
+    display: none; /* Ocultar el menú por defecto */
+    position: absolute;
+    background-color: #252440;
+    min-width: 160px;
+    max-height: 300px; 
+    overflow-y: auto; /* Habilita el scroll si hay demasiados elementos */
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    left: 50%; /* Posiciona el menú horizontalmente en el centro del botón */
+    transform: translateX(-50%); /* Ajusta para centrar menu desplegable */
+}
+
+.admin_cuentas:hover  .dropdown_cuentas{
+    display: block;
 }
