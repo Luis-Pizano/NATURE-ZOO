@@ -150,15 +150,6 @@ ul li {
     display: block;
 }
 
-/* Mostrar el menú cuando el botón es clicado */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown-list:hover .dropdown-content {
-    display: block;
-}
-
 .dropdown {
     margin-right: 42px;
 }
