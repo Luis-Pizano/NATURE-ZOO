@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "editar_tipo_alimentacion.css" %}">
+
+<div class="container">
+    <div class="contenido">
+        <h2>Editar Tipo de Aliemtación</h2>
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div class="acciones">
+              <button type="submit" class="guardar">Guardar cambios</button>
+              <a href="{% url 'listar_alimentacion' %}" class="Cancelar">Cancelar</a>
+          </div>
+      </form>
+      
+    </div>
+</div>
+{% endblock content %}

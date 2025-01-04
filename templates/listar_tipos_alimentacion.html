@@ -3,7 +3,6 @@
 
 {% block content %}
 <link rel="stylesheet" href="{% static "listar_tipo_alimentacion.css" %}">
-<!-- Bootstrap CSS -->
  <link rel="stylesheet" href="{% static "alert.css" %}">
 <script src="{% static "js/alert.js" %}"></script>
 
@@ -27,6 +26,18 @@
                     <td>{{ tipo.nombre_tipo_alimentacion }}</td>
                     <td>
                         <button class="btn-agregar" onclick="window.location.href={% url "agregar_alimentacion" %}">Agregar</button>
+                    </td>
+                    <td>
+                        <form action="{% url "eliminar_tipo_alimentacion" tipo.id_tipo_alimentacion%}" method = 'POST'>
+                            {% csrf_token %}
+                            <button class="btn-eliminar">Eliminar</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{% url "editar_tipo_alimentacion" tipo.nombre_tipo_alimentacion %}">
+                            {% csrf_token %}
+                            <button class="btn-editar">Editar</button>
+                        </form>
                     </td>
                 </tr>
             {% endfor %}
