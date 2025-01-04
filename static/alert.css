@@ -16,8 +16,30 @@
     top: 0.25rem;
     right: 0.25rem;
     z-index: 2;
-    color: #155724;
 }
+
+/* Estilos para el botón de cierre según el tipo de alerta */
+.alert-success .btn-close {
+    color: #155724; /* Verde */
+}
+
+.alert-error .btn-close {
+    color: #721c24; /* Rojo */
+}
+
+.alert-warning .btn-close {
+    color: #856404; /* Amarillo */
+}
+
+.alert-info .btn-close {
+    color: #0c5460; /* Azul */
+}
+
+.alert .btn-close:hover {
+    cursor: pointer;
+    opacity: 0.8; /* Cambiar la opacidad para un efecto visual */
+}
+
 
 .alert .btn-close:hover{
     cursor: pointer;

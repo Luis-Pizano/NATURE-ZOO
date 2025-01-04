@@ -11,7 +11,7 @@ def agregar_tipo(request):
             messages.success(request,"Tipo de alimentación agregada exitosamente.")
             return redirect('listar_alimentacion')
         else:
-            messages.error(request,"Ocurrio un error al intentar agregar el tipo de aliemntación.")
+            messages.error(request,"Este tipo de alimentación ya está registrada.")
     else:
         form = TipoAlimentacionForm()
     return render(request,'agregar_tipo_alimentacion.html',{'form':form})

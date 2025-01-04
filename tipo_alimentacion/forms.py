@@ -25,6 +25,6 @@ class TipoAlimentacionForm(forms.ModelForm):
 
         # Verifica si el tipo de alimentación ya existe
         if tipo:
-            raise forms.ValidationError("Este tipo de alimentación ya está registrada.")
+            raise forms.ValidationError("")
 
         return nombre_tipo_alimentacion
