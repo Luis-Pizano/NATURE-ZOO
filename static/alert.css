@@ -1,0 +1,67 @@
+/* Estilos de las alertas en Bootstrap */
+.alert {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0.375rem;
+    position: relative; /* Asegura que el botón de cierre esté correctamente posicionado */
+    z-index: 10; /* Asegura que la alerta esté por encima de otros elementos */
+}
+
+.alert-dismissible {
+    padding-right: 3rem;
+}
+
+.alert .btn-close {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+    z-index: 2;
+    color: #155724;
+}
+
+.alert .btn-close:hover{
+    cursor: pointer;
+}
+
+.btn-close{
+    background: transparent;
+    border: none;
+    outline: none;
+
+}
+
+.alert-primary {
+    color: #084298;
+    background-color: #cfe2ff;
+    border-color: #b6d4fe;
+}
+
+.alert-secondary {
+    color: #41464b;
+    background-color: #e2e3e5;
+    border-color: #d6d8db;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}

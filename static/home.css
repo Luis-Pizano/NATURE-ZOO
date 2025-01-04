@@ -13,10 +13,18 @@ html, body {
 .container {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 60vh;
     padding-top: 70px;
+}
+
+.saludo{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 36px;
+    color: #fff;
 }
 
 .contenido {
