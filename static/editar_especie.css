@@ -5,13 +5,12 @@
 }
 
 html,body{
-    background: url('images/background_tipo_alimentación.jpg') no-repeat center center;
+    background: url('images/background_listar_especies.jpg') no-repeat center center;
     background-size: cover;
 }
 
 .container{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -49,7 +48,7 @@ form p label{
     color: #fff;
 }
 
-form p input{
+form p input[type=text]{
     width: 100%;
     height: 40px;
     background: transparent;
@@ -60,6 +59,22 @@ form p input{
     padding-left: 15px; /* Espacio para el texto */
     font-size: 16px;
     color: #fff;
+}
+
+form p input[type=text]::placeholder{
+    color: #d4d4d4;;
+}
+
+form p select{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+    color:#fff;
+    background: #616161;
+    padding-left: 15px;
 }
 
 form p input::placeholder{
@@ -82,6 +97,42 @@ form p input::placeholder{
     margin-top: 15px;
 }
 
-.btn-submit:hover{
-    background: #ddd;
+.acciones{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+
+.acciones .guardar, .acciones .Cancelar {
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
+}
+
+.acciones .guardar {
+    background-color: #4CAF50; /* Verde para guardar */
+    color: white;
+}
+
+.acciones .Cancelar {
+    background-color: #f44336; /* Rojo para cancelar */
+    color: white;
+}
+
+.acciones .guardar:hover{
+    background: #228b3b;
+    transition: all 0.3s ease
+}
+
+.acciones .Cancelar:hover{
+    background: darkred;
+    transition: all 0.3s ease
 }

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "editar_especie.css" %}">
+
+<div class="container">
+    <div class="contenido">
+        <h2>Editar Especie</h2>
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div class="acciones">
+              <button type="submit" class="guardar">Guardar cambios</button>
+              <a href="{% url 'listar_especies' %}" class="Cancelar">Cancelar</a>
+          </div>
+      </form>
+      
+    </div>
+</div>
+{% endblock content %}

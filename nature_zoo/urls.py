@@ -24,4 +24,5 @@ urlpatterns = [
     path('', views.home, name = 'home'),
     path('',include('cuentas.urls')),
     path('',include('tipo_alimentacion.urls')),
+    path('',include('especies.urls')),
 ]
