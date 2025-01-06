@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'cuentas',
     'tipo_alimentacion',
     'especies',
+    'continentes',
 ]
 
 MIDDLEWARE = [

@@ -30,7 +30,7 @@ def eliminar_especie(request,id):
         messages.error(request,'Ocurrio un error al intentar eliminar la especie.')
     return render(request,'listar_especies.html')
 
-def editar(request, nombre):
+def editar_especie(request, nombre):
     # Busca la especie una sola vez
     especie = get_object_or_404(Especies, nombre_especie=nombre)
     

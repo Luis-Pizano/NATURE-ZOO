@@ -1,4 +1,4 @@
-from django.db import models
+from django.db import models # type: ignore
 from tipo_alimentacion.models import TipoAlimentacion
 
 class Especies(models.Model):
