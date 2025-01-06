@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cuentas',
     'tipo_alimentacion',
+    'habitats',
     'especies',
     'continentes',
     'paises',

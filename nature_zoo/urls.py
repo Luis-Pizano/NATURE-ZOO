@@ -24,6 +24,7 @@ urlpatterns = [
     path('', views.home, name = 'home'),
     path('',include('cuentas.urls')),
     path('',include('tipo_alimentacion.urls')),
+        path('',include('habitats.urls')),
     path('',include('especies.urls')),
     path('',include('continentes.urls')),
     path('',include('paises.urls')),

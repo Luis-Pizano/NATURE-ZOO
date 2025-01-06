@@ -1,7 +1,7 @@
-from django.urls import path
+from django.urls import path # type: ignore
 from . import views
 
-from django.conf.urls.static import static
+from django.conf.urls.static import static # type: ignore
 from nature_zoo import settings
 
 urlpatterns = [
