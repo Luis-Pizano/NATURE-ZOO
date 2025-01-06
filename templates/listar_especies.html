@@ -14,6 +14,7 @@
             <tr>
                 <th>ID</th>
                 <th>Nombre de Especie</th>
+                <th>imagen de Especie</th>
                 <th>Alimentación de la Especie</th>
                 <th>Agregar</th>
                 <th>Eliminar</th>
@@ -25,6 +26,9 @@
                 <tr>
                     <td>{{ especie.id_especie }}</td>
                     <td>{{ especie.nombre_especie }}</td>
+                    <td>
+                        <img src="{{ especie.imagen.url }}" class="imagen_especie">
+                    </td>
                     <td>{{ especie.id_tipo_alimentacion }}</td>
                     <td>
                         <button class="btn-agregar" onclick="window.location.href={% url "agregar_especies" %}">Agregar</button>
