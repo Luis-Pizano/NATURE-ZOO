@@ -15,9 +15,14 @@ class ContinentesForm(forms.ModelForm):
         }
         
     def clean_nombre_continente(self):
-        continente = self.cleaned_data.get('nombre_continente')
-        if continente:
-            continente = continente.upper()
+        nombre_continente = self.cleaned_data.get('nombre_continente')
+        continente = Continentes.objects.filter(nombre_continente=nombre_continente).exists
+        
+        if nombre_continente:
+            nombre_continente = nombre_continente.upper()
         else:
             raise forms.ValidationError("Este campo es obligatorio.")
-        return continente
+        
+        if continente:
+            raise forms.ValidationError("")
+        return nombre_continente

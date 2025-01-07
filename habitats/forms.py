@@ -14,9 +14,12 @@ class HabitatsForms(forms.ModelForm):
         
     def clean_nombre_habitat(self):
         nombre_habitat = self.cleaned_data.get('nombre_habitat')
+        habitat = Habitats.objects.filter(nombre_habitat=nombre_habitat).exists
         if nombre_habitat:
             nombre_habitat = nombre_habitat.upper()
         else:
             raise forms.ValidationError("Este campo es obligatorio.")
+        if habitat:
+            raise forms.ValidationError("")
         return nombre_habitat
             

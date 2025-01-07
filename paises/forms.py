@@ -11,10 +11,12 @@ class PaisesForm(forms.ModelForm):
         widgets = {'nombre_pais':forms.TextInput(attrs={'placeholder':'ejemplo: Brasil'})}
         
     def clean_nombre_pais(self):
-        pais = self.cleaned_data.get('nombre_pais')
-        if pais:
-            pais = pais.upper()
+        nombre_pais = self.cleaned_data.get('nombre_pais')
+        pais = Paises.objects.filter(nombre_pais=nombre_pais)
+        if nombre_pais:
+            nombre_pais = nombre_pais.upper()
         else:
             raise forms.ValidationError("Este campo es obligatorio.") 
-        
-        return pais
+        if pais:
+            raise forms.ValidationError("")
+        return nombre_pais

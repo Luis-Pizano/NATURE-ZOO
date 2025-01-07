@@ -28,4 +28,5 @@ urlpatterns = [
     path('',include('especies.urls')),
     path('',include('continentes.urls')),
     path('',include('paises.urls')),
+    path('',include('tipo_animal.urls')),
 ]

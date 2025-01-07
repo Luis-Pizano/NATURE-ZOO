@@ -2,45 +2,39 @@
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static "listar_especies.css" %}">
+<link rel="stylesheet" href="{% static "listar_tipo_animal.css" %}">
 <link rel="stylesheet" href="{% static "alert.css" %}">
 <script src="{% static "js/alert.js" %}"></script>
 
 <div class="container">
     <div class="contenido">
-        <h2>Especies</h2>
+        <h2>Tipos de Animales</h2>
     <table>
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Nombre de Especie</th>
-                <th>Imagen de Especie</th>
-                <th>Alimentación de la Especie</th>
+                <th>Nombre del Tipo de Animal</th>
                 <th>Agregar</th>
                 <th>Eliminar</th>
                 <th>Editar</th>
             </tr>
         </thead>
         <tbody>
-            {% for especie in especies %}
+            {% for tipo in tipos %}
                 <tr>
-                    <td>{{ especie.id_especie }}</td>
-                    <td>{{ especie.nombre_especie }}</td>
+                    <td>{{ tipo.id_tipo_animal }}</td>
+                    <td>{{ tipo.nombre_tipo_animal }}</td>
                     <td>
-                        <img src="{{ especie.imagen.url }}" class="imagen_especie">
-                    </td>
-                    <td>{{ especie.id_tipo_alimentacion }}</td>
-                    <td>
-                        <button class="btn-agregar" onclick="window.location.href={% url "agregar_especies" %}">Agregar</button>
+                        <button class="btn-agregar" onclick="window.location.href={% url "agregar_tipo_animal" %}">Agregar</button>
                     </td>
                     <td>
-                        <form action="{% url "eliminar_especie" especie.id_especie%}" method = 'POST'>
+                        <form action="{% url "eliminar_tipo_animal" tipo.id_tipo_animal%}" method = 'POST'>
                             {% csrf_token %}
                             <button class="btn-eliminar">Eliminar</button>
                         </form>
                     </td>
                     <td>
-                        <form action="{% url "editar_especie" especie.nombre_especie %}">
+                        <form action="{% url "editar_tipo_animal" tipo.nombre_tipo_animal %}">
                             {% csrf_token %}
                             <button class="btn-editar">Editar</button>
                         </form>
