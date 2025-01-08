@@ -16,7 +16,7 @@ class ContinentesForm(forms.ModelForm):
         
     def clean_nombre_continente(self):
         nombre_continente = self.cleaned_data.get('nombre_continente')
-        continente = Continentes.objects.filter(nombre_continente=nombre_continente).exists
+        continente = Continentes.objects.filter(nombre_continente=nombre_continente).exists()
         
         if nombre_continente:
             nombre_continente = nombre_continente.upper()

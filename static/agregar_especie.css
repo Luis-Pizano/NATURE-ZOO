@@ -97,3 +97,7 @@ form p select{
 .btn-submit:hover{
     background: #ddd;
 }
+
+textarea{
+    padding: 10px 10px;
+}

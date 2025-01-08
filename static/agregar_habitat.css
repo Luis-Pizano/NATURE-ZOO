@@ -83,3 +83,7 @@ form p input::placeholder{
 .btn-submit:hover{
     background: #ddd;
 }
+
+textarea{
+    padding: 10px 10px;
+}

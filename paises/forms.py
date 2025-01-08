@@ -12,7 +12,7 @@ class PaisesForm(forms.ModelForm):
         
     def clean_nombre_pais(self):
         nombre_pais = self.cleaned_data.get('nombre_pais')
-        pais = Paises.objects.filter(nombre_pais=nombre_pais)
+        pais = Paises.objects.filter(nombre_pais=nombre_pais).exists()
         if nombre_pais:
             nombre_pais = nombre_pais.upper()
         else:
