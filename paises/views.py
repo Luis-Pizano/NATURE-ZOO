@@ -39,7 +39,7 @@ def editar_pais(request,nombre):
             messages.success(request,'País editado exitosamente.')
             return redirect('listar_paises')
         else:
-            messages.error(request,'Ocurrio un error al intentar editar el país')
+            messages.error(request,'Este país ya esta registrado.')
     else:
         form = PaisesForm(instance=pais)
     return render(request,'editar_pais.html',{'form':form})

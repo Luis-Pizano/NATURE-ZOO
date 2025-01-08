@@ -11,7 +11,7 @@ def agregar_especies(request):
             messages.success(request,'Especie agregada exitosamente.')
             return redirect('listar_especies')
         else:
-            messages.error(request,'Esta especie ya esta registrada')
+            messages.error(request,'Esta especie ya esta registrada.')
     else:
         form = EspeciesForm()
     return render(request,'agregar_especie.html',{'form':form})
@@ -41,7 +41,7 @@ def editar_especie(request, nombre):
             messages.success(request, 'Especie actualizada exitosamente.')
             return redirect('listar_especies')
         else:
-            messages.error(request, 'Ocurrió un error al intentar editar la especie.')
+            messages.error(request, 'Esta especie ya esta registrada.')
     else:
         form = EspeciesForm(instance=especie)
     

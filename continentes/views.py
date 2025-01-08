@@ -39,7 +39,7 @@ def editar_continente(request,nombre):
             messages.success(request,'Continente actualizado exitosamente.')
             return redirect('listar_continentes')
         else:
-            messages.error(request,'Ocurrio un error al intentar editar el continente.')
+            messages.error(request,'Este continente ya esta registrado.')
     else:
         form = ContinentesForm(instance=continente)
     return render(request,'editar_continente.html',{'form':form})

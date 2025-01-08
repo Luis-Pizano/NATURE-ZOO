@@ -2,19 +2,30 @@
 {% load static %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static "alert.css" %}">
+<script src="{% static "js/alert.js" %}"></script>
 <link rel="stylesheet" href="{% static "editar_continente.css" %}">
 
 <div class="container">
     <div class="contenido">
-        <form method ='POST'>
-            {% csrf_token %}
-            {{form.as_p}}
-            <div class="acciones">
-                <button type="submit" class="guardar">Guardar cambios</button>
-                <a href="{% url 'listar_continentes' %}" class="Cancelar">Cancelar</a>
-            </div>
-        </form>
+        <h2>Editar Especie</h2>
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div class="acciones">
+              <button type="submit" class="guardar">Guardar cambios</button>
+              <a href="{% url 'listar_habitats' %}" class="Cancelar">Cancelar</a>
+          </div>
+      </form>
+      
     </div>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> X </button>
+        </div>
+    {% endfor %}
+{% endif %}
 </div>
-
 {% endblock content %}

@@ -123,3 +123,7 @@ form p input::placeholder{
     background: darkred;
     transition: all 0.3s ease
 }
+
+textarea{
+    padding: 10px 10px;
+}

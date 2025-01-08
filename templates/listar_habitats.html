@@ -15,7 +15,6 @@
                 <th>ID</th>
                 <th>Nombre de Habitat</th>
                 <th>Imagen del Habitat</th>
-                {% comment %} <th>Descripción del Habitat</th> {% endcomment %}
                 <th>Agregar</th>
                 <th>Eliminar</th>
                 <th>Editar</th>
@@ -29,7 +28,6 @@
                     <td>
                         <img src="{{ habitat.imagen.url }}" class="imagen_habitat">
                     </td>
-                    {% comment %} <td class="descripcion_habitat">{{habitat.descripcion}}</td> {% endcomment %}
                     <td>
                         <button class="btn-agregar" onclick="window.location.href={% url "agregar_habitats" %}">Agregar</button>
                     </td>

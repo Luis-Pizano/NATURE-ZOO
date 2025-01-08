@@ -40,7 +40,7 @@ def editar_tipo_alimentacion(request, nombre):
             messages.success(request, "Tipo de alimentación actualizada exitosamente.")
             return redirect('listar_alimentacion')
         else:
-            messages.error(request, 'Ocurrió un error al intentar editar el tipo de alimentación.')
+            messages.error(request, 'Este tipo de alimentación ya está registrada.')
     else:
         form = TipoAlimentacionForm(instance=tipo)
     
