@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404,redirect, render
-from .forms import EspeciesForm
+from .forms import EspeciesEditForm, EspeciesForm
 from .models import Especies
 from django.contrib import messages
 
@@ -35,7 +35,7 @@ def editar_especie(request, nombre):
     especie = get_object_or_404(Especies, nombre_especie=nombre)
     
     if request.method == 'POST':
-        form = EspeciesForm(request.POST, request.FILES, instance=especie)
+        form = EspeciesEditForm(request.POST, request.FILES, instance=especie)
         if form.is_valid():
             form.save()
             messages.success(request, 'Especie actualizada exitosamente.')
@@ -43,6 +43,6 @@ def editar_especie(request, nombre):
         else:
             messages.error(request, 'Esta especie ya esta registrada.')
     else:
-        form = EspeciesForm(instance=especie)
+        form = EspeciesEditForm(instance=especie)
     
     return render(request, 'editar_especie.html', {'form': form})

@@ -38,7 +38,7 @@ def editar_tipo_tipo_animal (request,nombre):
             messages.success(request,'Tipo de animal editado exitosamente.')
             return redirect('listar_tipo_animal')
         else:
-            messages.error(request,'Ocurrio un error al intentar editar el tipo de animal')
+            messages.error(request,'Este tipo de animal ya esta registrado.')
     else:
         form = TipoAnimalForm(instance=tipo)
     return render(request,'editar_tipo_animal.html',{'form':form})

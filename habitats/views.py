@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404,redirect,render # type: ignore
 from django.contrib import messages # type: ignore
-from .forms import HabitatsForms
+from .forms import HabitatsEditForms, HabitatsForms
 from .models import Habitats
 
 def agregar_habitats(request):
@@ -33,7 +33,7 @@ def eliminar_habitat(request,id):
 def editar_habitat(request,nombre):
     habitat = get_object_or_404(Habitats,nombre_habitat = nombre)
     if request.method =='POST':
-        form = HabitatsForms(request.POST,request.FILES,instance=habitat)
+        form = HabitatsEditForms(request.POST,request.FILES,instance=habitat)
         if form.is_valid():
             form.save()
             messages.success(request,'Habitat editado exitosamente.')
@@ -41,5 +41,5 @@ def editar_habitat(request,nombre):
         else:
             messages.error(request, 'Este habitat ya esta registrado.')
     else:
-        form = HabitatsForms(instance=habitat)
+        form = HabitatsEditForms(instance=habitat)
     return render(request, 'editar_habitat.html', {'form': form})
