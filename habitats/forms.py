@@ -13,7 +13,7 @@ class HabitatsForms(forms.ModelForm):
         
         widgets = {'nombre_habitat':forms.TextInput(attrs={'placeholder':'ejemplo: Selva'}),
             'descripcion': forms.Textarea(attrs={
-                'placeholder': 'Proporcione una descripción de la especie'
+                'placeholder': 'Proporcione una descripción del habitat'
             })}
         
     def clean_nombre_habitat(self):
@@ -40,7 +40,7 @@ class HabitatsEditForms(forms.ModelForm):
         
         widgets = {'nombre_habitat':forms.TextInput(attrs={'placeholder':'ejemplo: Selva'}),
             'descripcion': forms.Textarea(attrs={
-                'placeholder': 'Proporcione una descripción de la especie'
+                'placeholder': 'Proporcione una descripción del habitat'
             })}
         
     def clean_nombre_habitat(self):

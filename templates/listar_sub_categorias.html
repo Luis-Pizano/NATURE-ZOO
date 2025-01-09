@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "listar_sub_categorias.css" %}">
+<link rel="stylesheet" href="{% static "alert.css" %}">
+<script src="{% static "js/alert.js" %}"></script>
+
+<div class="container">
+    <div class="contenido">
+        <h2>Subcategorías</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre de Subcategoria</th>
+                <th>Agregar</th>
+                <th>Eliminar</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sub_categoria in sub_categorias %}
+                <tr>
+                    <td>{{ sub_categoria.id_subcategoria_animal }}</td>
+                    <td>{{ sub_categoria.nombre_subcategoria}}</td>
+                    <td>
+                        <button class="btn-agregar" onclick="window.location.href={% url "agregar_sub_categoria" %}">Agregar</button>
+                    </td>
+                    <td>
+                        <form action="{% url "eliminar_sub_categoria" sub_categoria.id_subcategoria_animal%}" method = 'POST'>
+                            {% csrf_token %}
+                            <button class="btn-eliminar">Eliminar</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{% url "editar_sub_categoria" sub_categoria.nombre_subcategoria %}">
+                            {% csrf_token %}
+                            <button class="btn-editar">Editar</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> X </button>
+        </div>
+    {% endfor %}
+{% endif %}
+
+</div>
+    </div>
+
+{% endblock content %}

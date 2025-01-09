@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'continentes',
     'paises',
     'tipo_animal',
+    'subcategoria_animal',
 ]
 
 MIDDLEWARE = [
