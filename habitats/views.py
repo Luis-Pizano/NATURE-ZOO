@@ -39,7 +39,7 @@ def editar_habitat(request,nombre):
             messages.success(request,'Habitat editado exitosamente.')
             return redirect('listar_habitats')
         else:
-            messages.error(request, 'Este habitat ya esta registrado.')
+            messages.error(request, 'Ocurrio un error al intentar editar el habitat.')
     else:
         form = HabitatsEditForms(instance=habitat)
     return render(request, 'editar_habitat.html', {'form': form})

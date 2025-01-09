@@ -41,7 +41,7 @@ def editar_especie(request, nombre):
             messages.success(request, 'Especie actualizada exitosamente.')
             return redirect('listar_especies')
         else:
-            messages.error(request, 'Esta especie ya esta registrada.')
+            messages.error(request, 'Ocurrio un error al intentar editar la especie.')
     else:
         form = EspeciesEditForm(instance=especie)
     
