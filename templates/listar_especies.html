@@ -9,56 +9,64 @@
 <div class="container">
     <div class="contenido">
         <h2>Especies</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre de Especie</th>
-                <th>Imagen de Especie</th>
-                <th>Alimentación de la Especie</th>
-                <th>Agregar</th>
-                <th>Eliminar</th>
-                <th>Editar</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for especie in especies %}
-                <tr>
-                    <td>{{ especie.id_especie }}</td>
-                    <td>{{ especie.nombre_especie }}</td>
-                    <td>
-                        <img src="{{ especie.imagen.url }}" class="imagen_especie">
-                    </td>
-                    <td>{{ especie.id_tipo_alimentacion }}</td>
-                    <td>
-                        <button class="btn-agregar" onclick="window.location.href={% url "agregar_especies" %}">Agregar</button>
-                    </td>
-                    <td>
-                        <form action="{% url "eliminar_especie" especie.id_especie%}" method = 'POST'>
-                            {% csrf_token %}
-                            <button class="btn-eliminar">Eliminar</button>
-                        </form>
-                    </td>
-                    <td>
-                        <form action="{% url "editar_especie" especie.nombre_especie %}">
-                            {% csrf_token %}
-                            <button class="btn-editar">Editar</button>
-                        </form>
-                    </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    {% if messages %}
-    {% for message in messages %}
-        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-            {{ message }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> X </button>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre de Especie</th>
+                        <th>Imagen de Especie</th>
+                        <th>Alimentación de la Especie</th>
+                        <th>Descripción de la Especie</th>
+                        <th>Agregar</th>
+                        <th>Eliminar</th>
+                        <th>Editar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for especie in especies %}
+                        <tr>
+                            <td>{{ especie.id_especie }}</td>
+                            <td>{{ especie.nombre_especie }}</td>
+                            <td>
+                                <img src="{{ especie.imagen.url }}" class="imagen_especie">
+                            </td>
+                            <td>{{ especie.id_tipo_alimentacion }}</td>
+                            <td>
+                                <div class="descripcion">
+                                    {{especie.descripcion}}
+                                </div>
+                            </td>
+                            <td>
+                                <button class="btn-agregar" onclick="window.location.href={% url 'agregar_especies' %}">Agregar</button>
+                            </td>
+                            <td>
+                                <form action="{% url 'eliminar_especie' especie.id_especie %}" method='POST'>
+                                    {% csrf_token %}
+                                    <button class="btn-eliminar">Eliminar</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="{% url 'editar_especie' especie.nombre_especie %}">
+                                    {% csrf_token %}
+                                    <button class="btn-editar">Editar</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
-    {% endfor %}
-{% endif %}
-
-</div>
+        {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> X </button>
+            </div>
+        {% endfor %}
+        {% endif %}
     </div>
+</div>
+
 
 {% endblock content %}
