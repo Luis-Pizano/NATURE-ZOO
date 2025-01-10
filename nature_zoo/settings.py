@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'tipo_animal',
     'subcategoria_animal',
     'estado_salud',
+    'tipos_zonas',
 ]
 
 MIDDLEWARE = [

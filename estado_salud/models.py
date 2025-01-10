@@ -6,7 +6,7 @@ class EstadoSalud(models.Model):
     descripcion =models.CharField(max_length=255,default=None)
     
     class Meta:
-        db_table = 'estado_salud'
+        db_table = 'estados_salud'
         verbose_name = 'estado_salud'
         verbose_name_plural = 'estados_salud'
         ordering = ['id_estado_salud']

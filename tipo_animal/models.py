@@ -1,4 +1,4 @@
-from django.db import models
+from django.db import models # type: ignore
 
 class TipoAnimal(models.Model):
     id_tipo_animal = models.AutoField(primary_key=True)

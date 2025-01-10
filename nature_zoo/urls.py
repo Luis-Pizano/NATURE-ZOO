@@ -31,4 +31,5 @@ urlpatterns = [
     path('',include('tipo_animal.urls')),
     path('',include('subcategoria_animal.urls')),
     path('',include('estado_salud.urls')),
+    path('',include('tipos_zonas.urls')),
 ]

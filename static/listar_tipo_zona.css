@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    background: url('images/background_listar_tipo_zona.jpeg') no-repeat center center;
+    background-size: cover;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    background: #fff;
+}
+  
+  table th, table td {
+    border: 1px solid black;
+    padding: 8px;
+}
+  
+  table th {
+    background-color: #009975;
+    color: #fff;
+}
+
+table .btn-eliminar{
+    background: #dc3545;
+    height: 30px;
+    width: 130px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+table .btn-agregar{
+    background: #28a745;
+    height: 30px;
+    width: 130px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+table .btn-editar{
+    background: #0770e0;
+    height: 30px;
+    width: 130px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+table .btn-agregar, .btn-eliminar, .btn-editar{
+    color: #fff;
+}
+
+.btn-agregar:hover{
+    background: #228b3b;
+    transition: all 0.3s ease;
+}
+
+table .btn-eliminar:hover{
+    background: #DB142C;
+    transition: all 0.3s ease;
+
+}
+
+table .btn-editar:hover{
+    background: #0056b3;
+    transition: all 0.3s ease;
+}
+
+.contenido h2{
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 65px;
+    color: #fff;
+}
+
+table td .descripcion {
+    max-width: 300px;
+    max-height: 90px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    line-height: 30px; 
+    display: block;
+    white-space: normal;
+    padding: 4px; 
+    background-color: #f9f9f9;
+}
