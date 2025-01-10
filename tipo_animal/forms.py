@@ -1,4 +1,4 @@
-from django import forms
+from django import forms # type: ignore
 from .models import TipoAnimal
 
 class TipoAnimalForm(forms.ModelForm):
@@ -19,6 +19,6 @@ class TipoAnimalForm(forms.ModelForm):
         else:
             raise forms.ValidationError("Este campo es obligatorio.")
         if tipo:
-             raise forms.ValidationError("")
+            raise forms.ValidationError("")
         
         return tipo_animal

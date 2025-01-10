@@ -1,5 +1,5 @@
-from django.shortcuts import get_object_or_404,redirect,render
-from django.contrib import messages
+from django.shortcuts import get_object_or_404,redirect,render # type: ignore
+from django.contrib import messages # type: ignore
 from .models import TipoAnimal
 from .forms import TipoAnimalForm
 def agregar_tipo(request):
@@ -15,11 +15,11 @@ def agregar_tipo(request):
         form = TipoAnimalForm()
     return render(request,'agregar_tipo_animal.html',{'form':form})
 
-def listar_tipo_tipo_animal(request):
+def listar_tipo_animal(request):
     tipos = TipoAnimal.objects.all()
     return render(request,'listar_tipos_animales.html',{'tipos':tipos})
 
-def eliminar_tipo_tipo_animal (request,id):
+def eliminar_tipo_animal (request,id):
     tipo = get_object_or_404(TipoAnimal,id_tipo_animal=id)
     if request.method =='POST':
         tipo.delete()
@@ -29,7 +29,7 @@ def eliminar_tipo_tipo_animal (request,id):
         messages.error(request,'Ocurrio un error al intentar eliminar el tipo de animal.')
     return render(request,'listar_tipos_animales.html')
 
-def editar_tipo_tipo_animal (request,nombre):
+def editar_tipo_animal (request,nombre):
     tipo = get_object_or_404(TipoAnimal,nombre_tipo_animal=nombre)
     if request.method =='POST':
         form = TipoAnimalForm(request.POST,instance=tipo)
