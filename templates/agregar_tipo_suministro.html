@@ -2,14 +2,14 @@
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static "agregar_tipo_alimentacion.css" %}">
- <link rel="stylesheet" href="{% static "alert.css" %}">
+<link rel="stylesheet" href="{% static "alert.css" %}">
 <script src="{% static "js/alert.js" %}"></script>
+<link rel="stylesheet" href="{% static "agregar_tipo_suministro.css" %}">
 
 <div class="container">
     <div class="contenido">
-        <h2>Agregar tipo de alimentación</h2>
-        <form action="{% url "agregar_alimentacion" %}" method ='POST'>
+        <h2>Agregar Tipo de Suministro</h2>
+        <form action="{% url "agregar_tipo_suministro" %}" method='POST'>
             {% csrf_token %}
             {{form.as_p}}
             <button type="submit" class="btn-submit">Agregar</button>

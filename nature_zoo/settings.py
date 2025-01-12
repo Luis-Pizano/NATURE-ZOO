@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'estado_salud',
     'tipos_zonas',
     'tipo_proveedor',
+    'tipo_suministro',
 ]
 
 MIDDLEWARE = [

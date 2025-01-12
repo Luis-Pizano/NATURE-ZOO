@@ -33,4 +33,5 @@ urlpatterns = [
     path('',include('estado_salud.urls')),
     path('',include('tipos_zonas.urls')),
     path('',include('tipo_proveedor.urls')),
+    path('',include('tipo_suministro.urls')),
 ]
