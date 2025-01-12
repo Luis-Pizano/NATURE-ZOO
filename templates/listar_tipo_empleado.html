@@ -2,18 +2,18 @@
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static "listar_tipo_alimentacion.css" %}">
+<link rel="stylesheet" href="{% static "listar_tipo_empleado.css" %}">
 <link rel="stylesheet" href="{% static "alert.css" %}">
 <script src="{% static "js/alert.js" %}"></script>
 
 <div class="container">
     <div class="contenido">
-        <h2>Tipos de Alimentación</h2>
+        <h2>Tipos de Empleados</h2>
     <table>
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Nombre de Tipo Alimentación</th>
+                <th>Nombre de Tipo de Empleado</th>
                 <th>Agregar</th>
                 <th>Eliminar</th>
                 <th>Editar</th>
@@ -22,19 +22,19 @@
         <tbody>
             {% for tipo in tipos %}
                 <tr>
-                    <td>{{ tipo.id_tipo_alimentacion }}</td>
-                    <td>{{ tipo.nombre_tipo_alimentacion }}</td>
+                    <td>{{ tipo.id_tipo_empleado }}</td>
+                    <td>{{ tipo.nombre_tipo_empleado }}</td>
                     <td>
-                        <button class="btn-agregar" onclick="window.location.href={% url "agregar_alimentacion" %}">Agregar</button>
+                        <button class="btn-agregar" onclick="window.location.href={% url "agregar_tipo_empleado" %}">Agregar</button>
                     </td>
                     <td>
-                        <form action="{% url "eliminar_tipo_alimentacion" tipo.id_tipo_alimentacion %}" method = 'POST'>
+                        <form action="{% url "eliminar_tipo_empleado" tipo.id_tipo_empleado %}" method = 'POST'>
                             {% csrf_token %}
                             <button class="btn-eliminar">Eliminar</button>
                         </form>
                     </td>
                     <td>
-                        <form action="{% url "editar_tipo_alimentacion" tipo.nombre_tipo_alimentacion %}">
+                        <form action="{% url "editar_tipo_empleado" tipo.nombre_tipo_empleado %}">
                             {% csrf_token %}
                             <button class="btn-editar">Editar</button>
                         </form>

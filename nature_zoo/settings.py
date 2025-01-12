@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'tipos_zonas',
     'tipo_proveedor',
     'tipo_suministro',
+    'tipo_empleado',
 ]
 
 MIDDLEWARE = [
