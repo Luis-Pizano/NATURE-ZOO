@@ -4,17 +4,17 @@
 {% block content %}
 <link rel="stylesheet" href="{% static "alert.css" %}">
 <script src="{% static "js/alert.js" %}"></script>
-<link rel="stylesheet" href="{% static "editar_pais.css" %}">
+<link rel="stylesheet" href="{% static "editar_sexo.css" %}">
 
 <div class="container">
     <div class="contenido">
-        <h2>Editar Pais</h2>
+        <h2>Editar Sexo</h2>
         <form method="POST">
           {% csrf_token %}
           {{ form.as_p }}
           <div class="acciones">
               <button type="submit" class="guardar">Guardar cambios</button>
-              <a href="{% url 'listar_paises' %}" class="Cancelar">Cancelar</a>
+              <a href="{% url 'listar_sexos' %}" class="Cancelar">Cancelar</a>
           </div>
       </form>
       

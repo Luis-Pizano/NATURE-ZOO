@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'tipo_empleado',
     'metodos_pago',
     'tipo_entidad',
+    'sexo',
 ]
 
 MIDDLEWARE = [
