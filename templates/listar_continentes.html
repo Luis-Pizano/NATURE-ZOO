@@ -25,7 +25,9 @@
                     <td>{{ continente.id_continente}}</td>
                     <td>{{ continente.nombre_continente}}</td>
                     <td>
-                        <button class="btn-agregar" onclick="window.location.href={% url "agregar_continentes" %}">Agregar</button>
+                        <form action="{% url "agregar_continentes" %}">
+                            <button class="btn-agregar">Agregar</button>
+                        </form>
                     </td>
                     <td>
                         <form action="{% url "eliminar_continente" continente.id_continente%}" method = 'POST'>

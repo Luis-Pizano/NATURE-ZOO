@@ -25,7 +25,9 @@
                     <td>{{ tipo.id_tipo_suministro }}</td>
                     <td>{{ tipo.nombre_tipo_suministro}}</td>
                     <td>
-                        <button class="btn-agregar" onclick="window.location.href={% url "agregar_tipo_suministro" %}">Agregar</button>
+                        <form action="{% url "agregar_tipo_suministro" %}">
+                            <button class="btn-agregar">Agregar</button>
+                        </form>
                     </td>
                     <td>
                         <form action="{% url "eliminar_tipo_suministro" tipo.id_tipo_suministro %}" method = 'POST'>

@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'tipo_suministro',
     'tipo_empleado',
     'metodos_pago',
+    'tipo_entidad',
 ]
 
 MIDDLEWARE = [

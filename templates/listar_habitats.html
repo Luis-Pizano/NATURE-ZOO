@@ -35,7 +35,9 @@
                         </div>
                     </td>
                     <td>
-                        <button class="btn-agregar" onclick="window.location.href={% url "agregar_habitats" %}">Agregar</button>
+                        <form action="{% url "agregar_habitats" %}">
+                            <button class="btn-agregar">Agregar</button>
+                        </form>
                     </td>
                     <td>
                         <form action="{% url "eliminar_habitat" habitat.id_habitat%}" method = 'POST'>

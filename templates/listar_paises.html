@@ -25,7 +25,9 @@
                     <td>{{ pais.id_pais}}</td>
                     <td>{{ pais.nombre_pais}}</td>
                     <td>
-                        <button class="btn-agregar" onclick="window.location.href={% url "agregar_pais" %}">Agregar</button>
+                        <form action="{% url "agregar_pais" %}">
+                            <button class="btn-agregar">Agregar</button>
+                        </form>
                     </td>
                     <td>
                         <form action="{% url "eliminar_pais" pais.id_pais%}" method = 'POST'>

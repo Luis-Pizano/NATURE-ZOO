@@ -25,7 +25,9 @@
                     <td>{{ tipo.id_tipo_alimentacion }}</td>
                     <td>{{ tipo.nombre_tipo_alimentacion }}</td>
                     <td>
-                        <button class="btn-agregar" onclick="window.location.href={% url "agregar_alimentacion" %}">Agregar</button>
+                        <form action="{% url "agregar_alimentacion" %}">
+                            <button class="btn-agregar">Agregar</button>
+                        </form>
                     </td>
                     <td>
                         <form action="{% url "eliminar_tipo_alimentacion" tipo.id_tipo_alimentacion %}" method = 'POST'>

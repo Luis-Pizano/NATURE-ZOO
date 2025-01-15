@@ -39,6 +39,7 @@ urlpatterns = [
     path('tipo_suministro/', include('tipo_suministro.urls')),
     path('tipo_empleado/', include('tipo_empleado.urls')),
     path('metodos_pago/', include('metodos_pago.urls')),
+    path('tipo_entidad/', include('tipo_entidad.urls')),
 ]
 
 if settings.DEBUG:

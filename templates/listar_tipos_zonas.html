@@ -31,7 +31,9 @@
                         </div>
                     </td>
                     <td>
-                        <button class="btn-agregar" onclick="window.location.href={% url "agregar_tipo_zona" %}">Agregar</button>
+                        <form action="{% url "agregar_tipo_zona" %}">
+                            <button class="btn-agregar">Agregar</button>
+                        </form>
                     </td>
                     <td>
                         <form action="{% url "eliminar_tipo_zona" tipo.id_tipo_zona%}" method = 'POST'>
