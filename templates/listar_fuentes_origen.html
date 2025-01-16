@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "listar_fuentes_origen.css" %}">
+<link rel="stylesheet" href="{% static "alert.css" %}">
+<script src="{% static "js/alert.js" %}"></script>
+
+<div class="container">
+    <div class="contenido">
+        <h2>Fuentes de Origen</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre de Fuente de Origen</th>
+                <th>Tipo de Entidad</th>
+                <th>Agregar</th>
+                <th>Eliminar</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fuente in fuentes %}
+                <tr>
+                    <td>{{ fuente.id_fuente_origen }}</td>
+                    <td>{{ fuente.nombre_fuente_origen}}</td>
+                    <td>{{ fuente.id_tipo_entidad}}</td>
+                    <td>
+                        <form action="{% url "agregar_fuente_origen" %}">
+                            <button class="btn-agregar">Agregar</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{% url "eliminar_fuente_origen" fuente.id_fuente_origen%}" method = 'POST'>
+                            {% csrf_token %}
+                            <button class="btn-eliminar">Eliminar</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{% url "editar_fuente_origen" fuente.nombre_fuente_origen %}">
+                            {% csrf_token %}
+                            <button class="btn-editar">Editar</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> X </button>
+        </div>
+    {% endfor %}
+{% endif %}
+
+</div>
+    </div>
+
+{% endblock content %}

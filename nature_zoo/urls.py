@@ -42,6 +42,7 @@ urlpatterns = [
     path('tipo_entidad/', include('tipo_entidad.urls')),
     path('genero/', include('sexo.urls')),
     path('tipo_entrada/', include('tipo_entrada.urls')),
+    path('fuentes_origen/', include('fuentes_origen.urls')),
 ]
 
 if settings.DEBUG:

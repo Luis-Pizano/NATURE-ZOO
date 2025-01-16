@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'tipo_entidad',
     'sexo',
     'tipo_entrada',
+    'fuentes_origen',
 ]
 
 MIDDLEWARE = [
