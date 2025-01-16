@@ -24,11 +24,11 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),  # Página principal
+    path('', views.home, name='home'),
     path('cuentas/', include('cuentas.urls')),
     path('tipo_alimentación/', include('tipo_alimentacion.urls')),
     path('habitats/', include('habitats.urls')),
-    path('especies/', include('especies.urls')),  # Prefijo específico para especies
+    path('especies/', include('especies.urls')),
     path('continentes/', include('continentes.urls')),
     path('paises/', include('paises.urls')),
     path('tipo_animal/', include('tipo_animal.urls')),
@@ -41,6 +41,7 @@ urlpatterns = [
     path('metodos_pago/', include('metodos_pago.urls')),
     path('tipo_entidad/', include('tipo_entidad.urls')),
     path('genero/', include('sexo.urls')),
+    path('tipo_entrada/', include('tipo_entrada.urls')),
 ]
 
 if settings.DEBUG:
