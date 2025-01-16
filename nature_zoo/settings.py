@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'sexo',
     'tipo_entrada',
     'fuentes_origen',
+    'zonas',
 ]
 
 MIDDLEWARE = [

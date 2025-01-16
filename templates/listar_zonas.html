@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "listar_zona.css" %}">
+<link rel="stylesheet" href="{% static "alert.css" %}">
+<script src="{% static "js/alert.js" %}"></script>
+
+<div class="container">
+    <div class="contenido">
+        <h2>Zonas</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre de Zona</th>
+                <th>Nombre del Tipo de Zona</th>
+                <th>Agregar</th>
+                <th>Eliminar</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for zona in zonas %}
+                <tr>
+                    <td>{{zona.id_zona}}</td>
+                    <td>{{zona.nombre_zona}}</td>
+                    <td>{{ zona.id_tipo_zona }}</td>
+                    <td>
+                        <form action="{% url "agregar_zona" %}">
+                            <button class="btn-agregar">Agregar</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{% url "eliminar_zona" zona.id_zona%}" method = 'POST'>
+                            {% csrf_token %}
+                            <button class="btn-eliminar">Eliminar</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{% url "editar_zona" zona.nombre_zona %}">
+                            {% csrf_token %}
+                            <button class="btn-editar">Editar</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> X </button>
+        </div>
+    {% endfor %}
+{% endif %}
+
+</div>
+    </div>
+
+{% endblock content %}
