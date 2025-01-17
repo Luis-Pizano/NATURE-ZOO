@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'tipo_entrada',
     'fuentes_origen',
     'zonas',
+    'proveedores',
 ]
 
 MIDDLEWARE = [

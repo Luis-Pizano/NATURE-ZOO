@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "listar_proveedores.css" %}">
+<link rel="stylesheet" href="{% static "alert.css" %}">
+<script src="{% static "js/alert.js" %}"></script>
+
+<div class="container">
+    <div class="contenido">
+        <h2>proveedores</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre del proveedor</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Tipo Proveedor</th>
+                <th>Tipo Entidad</th>
+                <th>Correo</th>
+                <th>Telefono</th>
+                <th>Agregar</th>
+                <th>Eliminar</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for proveedor in proveedores %}
+                <tr>
+                    <td>{{ proveedor.id_proveedor}}</td>
+                    <td>{{ proveedor.nombre_proveedor}}</td>
+                    <td>{{ proveedor.apellido_paterno}}</td>
+                    <td>{{ proveedor.apellido_materno}}</td>
+                    <td>{{ proveedor.id_tipo_proveedor}}</td>
+                    <td>{{ proveedor.id_tipo_entidad}}</td>
+                    <td>{{ proveedor.correo}}</td>
+                    <td>{{ proveedor.telefono_separado}}</td>
+                    <td>
+                        <form action="{% url "agregar_proveedor" %}">
+                            <button class="btn-agregar">Agregar</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{% url "eliminar_proveedor" proveedor.id_proveedor%}" method = 'POST'>
+                            {% csrf_token %}
+                            <button class="btn-eliminar">Eliminar</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{% url "editar_proveedor" proveedor.id_proveedor %}">
+                            {% csrf_token %}
+                            <button class="btn-editar">Editar</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> X </button>
+        </div>
+    {% endfor %}
+{% endif %}
+
+</div>
+    </div>
+
+{% endblock content %}
