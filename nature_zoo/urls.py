@@ -45,6 +45,7 @@ urlpatterns = [
     path('Fuentes_origen/', include('fuentes_origen.urls')),
     path('Zonas/', include('zonas.urls')),
     path('Proveedores/', include('proveedores.urls')),
+    path('Suministros/', include('suministros.urls')),
 ]
 
 if settings.DEBUG:

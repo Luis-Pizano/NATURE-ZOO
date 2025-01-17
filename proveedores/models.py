@@ -19,7 +19,7 @@ class Proveedores(models.Model):
         ordering = ['id_proveedor']
         
     def __str__(self):
-        return self.nombre_proveedor
+        return f"{self.nombre_proveedor} {self.apellido_paterno} {self.apellido_materno}"
     
     def telefono_separado(self):
         telefono = self.telefono

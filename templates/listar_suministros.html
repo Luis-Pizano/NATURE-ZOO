@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "listar_suministros.css" %}">
+<link rel="stylesheet" href="{% static "alert.css" %}">
+<script src="{% static "js/alert.js" %}"></script>
+
+<div class="container">
+    <div class="contenido">
+        <h2>Suministros</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre de Suministro</th>
+                    <th>Tipo de Suministro</th>
+                    <th>Cantidad</th>
+                    <th>Proveedor</th>
+                    <th>Metodo de Pago</th>
+                    <th>Fecha de Compra</th>
+                    <th>Ultima Acutualización</th>
+                    <th>Agregar</th>
+                    <th>Eliminar</th>
+                    <th>Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for suministro in suministros %}
+                    <tr>
+                        <td>{{ suministro.id_suministro }}</td>
+                        <td>{{ suministro.nombre_suministro }}</td>
+                        <td>{{ suministro.id_tipo_suministro }}</td>
+                        <td>{{ suministro.cantidad }}</td>
+                        <td>{{ suministro.id_proveedor }}</td>
+                        <td>{{ suministro.id_metodo_pago }}</td>
+                        <td>{{ suministro.comprado_el|date:"d/m/Y g:i A" }}</td> <!-- G = Hora, i = Minutos, A = AM O PM -->
+                        <td>{{ suministro.actualizado_el|date:"d/m/Y g:i A" }}</td> <!-- G = Hora, i = Minutos, A = AM O PM -->
+                        <td>
+                            <form action="{% url 'agregar_suministro' %}">
+                                <button class="btn-agregar">Agregar</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="{% url 'eliminar_suministro' suministro.id_suministro %}" method='POST'>
+                                {% csrf_token %}
+                                <button class="btn-eliminar">Eliminar</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="{% url 'editar_suministro' suministro.id_suministro %}">
+                                {% csrf_token %}
+                                <button class="btn-editar">Editar</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> X </button>
+        </div>
+    {% endfor %}
+{% endif %}
+
+</div>
+    </div>
+
+{% endblock content %}
