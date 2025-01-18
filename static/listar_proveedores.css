@@ -96,7 +96,11 @@ table .btn-editar:hover{
     color: #fff;
 }
 
-.contenido table {
-    max-width: 12px;
+table{
+    min-width: 1000px;
+}
+
+.contenido{
     overflow-x: auto;
+    width: 100%;
 }

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "listar_empleados.css" %}">
+<link rel="stylesheet" href="{% static "alert.css" %}">
+<script src="{% static "js/alert.js" %}"></script>
+
+<div class="container">
+    <div class="contenido">
+        <h2>Empleados</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre del Empleado</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Tipo de empleado</th>
+                <th>Correo Personal</th>
+                <th>Correo Laboral</th>
+                <th>Telefono</th>
+                <th>Agregar</th>
+                <th>Eliminar</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for empleado in empleados %}
+                <tr>
+                    <td>{{ empleado.id_empleado}}</td>
+                    <td>{{ empleado.nombre_empleado}}</td>
+                    <td>{{ empleado.apellido_paterno}}</td>
+                    <td>{{ empleado.apellido_materno}}</td>
+                    <td>{{ empleado.id_tipo_empleado}}</td>
+                    <td>{{ empleado.correo_personal}}</td>
+                    <td>{{ empleado.correo_trabajo}}</td>
+                    <td>{{ empleado.telefono_separado}}</td>
+                    <td>
+                        <form action="{% url "agregar_empleado" %}">
+                            <button class="btn-agregar">Agregar</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{% url "eliminar_empleado" empleado.id_empleado%}" method = 'POST'>
+                            {% csrf_token %}
+                            <button class="btn-eliminar">Eliminar</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{% url "editar_empleado" empleado.id_empleado %}">
+                            {% csrf_token %}
+                            <button class="btn-editar">Editar</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> X </button>
+        </div>
+    {% endfor %}
+{% endif %}
+
+</div>
+    </div>
+
+{% endblock content %}
