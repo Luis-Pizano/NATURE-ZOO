@@ -50,9 +50,17 @@ html,body{
     outline: none;
     border: 2px solid rgba(255, 255, 255, 0.4); 
     border-radius: 25px;
-    padding-left: 40px; /* Espacio para el icono */
+    padding-left: 40px;
     font-size: 16px;
     color: #fff;;
+}
+
+#email{
+    padding-right: 15px;
+}
+
+#password{
+    padding-right: 40px;
 }
 
 .input-box input::placeholder{
