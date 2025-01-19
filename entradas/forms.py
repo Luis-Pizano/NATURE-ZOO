@@ -11,6 +11,14 @@ class EntradasForm(forms.ModelForm):
         }
         widget = {'precio': forms.NumberInput(attrs={'min':'0'})}
         
+    def clean_id_tipo_entrada(self):
+        id_tipo_entrada = self.cleaned_data.get('id_tipo_entrada')
+        entrada = Entradas.objects.filter(id_tipo_entrada=id_tipo_entrada).exists()
+        if entrada:
+            raise forms.ValidationError("")
+        return id_tipo_entrada
+
+        
 
 class EntradasEditForm(forms.ModelForm):
     class Meta:
@@ -20,3 +28,4 @@ class EntradasEditForm(forms.ModelForm):
             'precio':'Precio'
         }
         widget = {'precio': forms.NumberInput(attrs={'min':'0'})}
+        
