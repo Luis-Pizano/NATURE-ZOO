@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'suministros',
     'empleados',
     'entradas',
+    'visitantes',
 ]
 
 MIDDLEWARE = [

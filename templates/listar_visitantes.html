@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "listar_visitantes.css" %}">
+<link rel="stylesheet" href="{% static "alert.css" %}">
+<script src="{% static "js/alert.js" %}"></script>
+
+<div class="container">
+    <div class="contenido">
+        <h2>Visitantes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre del Visitante</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Correo</th>
+                <th>Telefono</th>
+                <th>Agregar</th>
+                <th>Eliminar</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for visitante in visitantes %}
+                <tr>
+                    <td>{{ visitante.id_visitante}}</td>
+                    <td>{{ visitante.nombre_visitante}}</td>
+                    <td>{{ visitante.apellido_paterno}}</td>
+                    <td>{{ visitante.apellido_materno}}</td>
+                    <td>{{ visitante.correo}}</td>
+                    <td>{{ visitante.telefono_separado}}</td>
+                    <td>
+                        <form action="{% url "agregar_visitante" %}">
+                            <button class="btn-agregar">Agregar</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{% url "eliminar_visitante" visitante.id_visitante%}" method = 'POST'>
+                            {% csrf_token %}
+                            <button class="btn-eliminar">Eliminar</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{% url "editar_visitante" visitante.id_visitante %}">
+                            {% csrf_token %}
+                            <button class="btn-editar">Editar</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> X </button>
+        </div>
+    {% endfor %}
+{% endif %}
+
+</div>
+    </div>
+
+{% endblock content %}

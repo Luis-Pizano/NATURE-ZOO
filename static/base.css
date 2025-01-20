@@ -159,6 +159,37 @@ ul li {
     position: relative;
 }
 
+.ticket {
+    position: absolute; /* Asegura que sea independiente */
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    font-size: 24px;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.carrito-notificacion {
+    position: absolute;
+    top: -5px; /* Ajusta según el tamaño */
+    right: -5px; /* Ajusta según el tamaño */
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 0 6px;
+    min-width: 20px;
+    text-align: center;
+    margin-right: 5px;
+}
+
+
 @media (max-width: 768px) {
     .dropdown-content {
         min-width: 200px; /* Ajustar ancho para pantallas pequeñas */

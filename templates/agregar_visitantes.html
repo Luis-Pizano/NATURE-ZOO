@@ -2,16 +2,17 @@
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static "agregar_proveedor.css" %}">
+<link rel="stylesheet" href="{% static "agregar_visitante.css" %}">
 <link rel="stylesheet" href="{% static "alert.css" %}">
 <script src="{% static "js/alert.js" %}"></script>
 
 <div class="container">
     <div class="contenido">
-        <h2>Agregar Proveedor</h2>
-        <form method ='POST'>
+        <h2>Agregar Visitante</h2>
+        <form method='POST'>
             {% csrf_token %}
-            {{form.as_p}}
+            {{ form.non_field_errors }}
+            {{ form.as_p }}
             <button type="submit" class="btn-submit">Agregar</button>
         </form>
     </div>
@@ -22,6 +23,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> X </button>
         </div>
     {% endfor %}
-{% endif %}
+    {% endif %}
 </div>
+
 {% endblock content %}

@@ -2,18 +2,22 @@
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static "agregar_proveedor.css" %}">
 <link rel="stylesheet" href="{% static "alert.css" %}">
 <script src="{% static "js/alert.js" %}"></script>
+<link rel="stylesheet" href="{% static "editar_visitante.css" %}">
 
 <div class="container">
     <div class="contenido">
-        <h2>Agregar Proveedor</h2>
-        <form method ='POST'>
-            {% csrf_token %}
-            {{form.as_p}}
-            <button type="submit" class="btn-submit">Agregar</button>
-        </form>
+        <h2>Editar Visitante</h2>
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div class="acciones">
+              <button type="submit" class="guardar">Guardar cambios</button>
+              <a href="{% url 'listar_visitantes' %}" class="Cancelar">Cancelar</a>
+          </div>
+      </form>
+      
     </div>
     {% if messages %}
     {% for message in messages %}
