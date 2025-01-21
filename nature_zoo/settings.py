@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'empleados',
     'entradas',
     'visitantes',
+    'ventas',
 ]
 
 MIDDLEWARE = [

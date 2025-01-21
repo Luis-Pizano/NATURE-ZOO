@@ -2,13 +2,13 @@
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static "agregar_visitante.css" %}">
+<link rel="stylesheet" href="{% static "agregar_venta.css" %}">
 <link rel="stylesheet" href="{% static "alert.css" %}">
 <script src="{% static "js/alert.js" %}"></script>
 
 <div class="container">
     <div class="contenido">
-        <h2>Agregar Visitante</h2>
+        <h2>Agregar Venta</h2>
         <form method='POST'>
             {% csrf_token %}
             {{ form.as_p }}
