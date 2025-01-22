@@ -55,6 +55,7 @@ form p label {
     font-size: 16px;
     margin-bottom: 5px;
     color: #fff;
+    text-align: center;
 }
 
 form p input{
