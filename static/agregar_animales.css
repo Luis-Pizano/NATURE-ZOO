@@ -1,15 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html,body{
+html, body {
     background: url('images/background_agregar_animales.jpg') no-repeat center center;
     background-size: cover;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,50 +17,56 @@ html,body{
     min-height: 100vh;
 }
 
-.contenido{
-    width: 420px;
-    background: transparent;
+.contenido {
+    width: 90%;
+    max-width: 900px;
+    background: rgba(0, 0, 0, 0.6);
     border: solid 2px rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(20px); 
-    color: #fff;
+    backdrop-filter: blur(20px);
     border-radius: 15px;
-    padding: 40px 30px; 
+    padding: 40px 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
     margin-top: 60px;
 }
 
-.contenido h2{
+.contenido h2 {
     text-align: center;
     font-size: 36px;
-    margin: 15px 15px;
+    margin-bottom: 20px;
     color: #fff;
 }
 
-form p{
+form {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap; /* Permite que los inputs se ajusten automáticamente en filas */
+    gap: 15px; /* Espaciado entre los campos */
+    justify-content: center; /* Centra los campos */
 }
 
-form p label{
-    text-align: center;
-    font-size: 18px;
-    margin: 15px 15px;
-    color: #fff
+form p {
+    flex: 1 1 calc(25% - 15px); /* Cada campo ocupa el 25% del ancho del contenedor menos el gap */
+    max-width: calc(25% - 15px); /* Se asegura de que no exceda el 25% */
+    margin: 0;
+}
+
+form p label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #fff;
 }
 
 form p input{
-    width: 100%;
+    width: 100%; /* Ocupa todo el espacio disponible */
     height: 40px;
-    margin-bottom: 15px;
     border-radius: 25px;
     border: 2px solid rgba(255, 255, 255, 0.4);
-    background: transparent;
-    color:#fff;
-    background: #616161;
-    padding-left: 15px;
-    padding-right: 15px;
-    font-size: 18px;
+    background-color: #616161;
+    color: #fff;
+    padding: 0 15px;
+    font-size: 16px;
+    outline: none;
 }
 
 form p select{
@@ -73,6 +79,12 @@ form p select{
     color:#fff;
     background: #616161;
     padding-left: 15px;
+    padding-right: 15px;
+}
+
+form p input:focus,
+form p select:focus {
+    border-color: #fff;
 }
 
 .contenido .btn-submit {
@@ -88,9 +100,9 @@ form p select{
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
-.btn-submit:hover{
-    background: #ddd;
+.btn-submit:hover {
+    background-color: #ddd;
 }

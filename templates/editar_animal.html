@@ -11,7 +11,17 @@
         <h2>Editar Animal</h2>
         <form method="POST">
           {% csrf_token %}
-          {{ form.as_p }}
+            <p>{{ form.id_continente.label_tag }}{{ form.id_continente }}</p>
+            <p>{{ form.id_pais.label_tag }}{{ form.id_pais }}</p>
+            <p>{{ form.id_tipo_animal.label_tag }}{{ form.id_tipo_animal }}</p>
+            <p>{{ form.id_subcategoria_animal.label_tag }}{{ form.id_subcategoria_animal }}</p>
+            <p>{{ form.id_especie.label_tag }}{{ form.id_especie }}</p>
+            <p>{{ form.id_habitat.label_tag }}{{ form.id_habitat }}</p>
+            <p>{{ form.id_sexo.label_tag }}{{ form.id_sexo }}</p>
+            <p>{{ form.id_estado_salud.label_tag }}{{ form.id_estado_salud }}</p>
+            <p>{{ form.id_zona.label_tag }}{{ form.id_zona }}</p>
+            <p>{{ form.id_fuente_origen.label_tag }}{{ form.id_fuente_origen }}</p>
+            <p>{{ form.fecha_nacimiento.label_tag }}{{ form.fecha_nacimiento }}</p>
           <div class="acciones">
               <button type="submit" class="guardar">Guardar cambios</button>
               <a href="{% url 'listar_animales' %}" class="Cancelar">Cancelar</a>
