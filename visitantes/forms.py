@@ -13,7 +13,7 @@ class VisitantesForm(forms.ModelForm):
             'telefono':'Telefono',
         }
         widgets = {
-            'nombre_visitante': forms.TextInput(attrs={'placeholder':'ejemplo: Letica'}),
+            'nombre_visitante': forms.TextInput(attrs={'placeholder':'ejemplo: Leticia'}),
             'apellido_paterno': forms.TextInput(attrs={'placeholder':'ejemplo: Goméz'}),
             'apellido_materno': forms.TextInput(attrs={'placeholder':'ejemplo: Goméz'}),
             'correo': forms.EmailInput(attrs={'placeholder': 'ejemplo: Gomez.leti@gmail.com'}),

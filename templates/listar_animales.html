@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "listar_animales.css" %}">
+<link rel="stylesheet" href="{% static "alert.css" %}">
+<script src="{% static "js/alert.js" %}"></script>
+
+<div class="container">
+    <div class="contenido">
+        <h2>Animales</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Continente</th>
+                <th>Pais</th>
+                <th>Tipo de Animal</th>
+                <th>Subcategoria</th>
+                <th>Especie</th>
+                <th>Habitat</th>
+                <th>Sexo</th>
+                <th>Estado de Salud</th>
+                <th>Zona</th>
+                <th>Fuente de Origen</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Agregar</th>
+                <th>Eliminar</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for animal in animales %}
+                <tr>
+                    <td>{{ animal.id_animal}}</td>
+                    <td>{{ animal.id_continente}}</td>
+                    <td>{{ animal.id_pais}}</td>
+                    <td>{{ animal.id_tipo_animal}}</td>
+                    <td>{{ animal.id_subcategoria_animal}}</td>
+                    <td>{{ animal.id_especie}}</td>
+                    <td>{{ animal.id_habitat}}</td>
+                    <td>{{ animal.id_sexo}}</td>
+                    <td>{{ animal.id_estado_salud}}</td>
+                    <td>{{ animal.id_zona}}</td>
+                    <td>{{ animal.id_fuente_origen}}</td>
+                    <td>{{ animal.fecha_nacimiento}}</td>
+                    <td>
+                        <form action="{% url "agregar_animales" %}">
+                            <button class="btn-agregar">Agregar</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{% url "eliminar_animal" animal.id_animal%}" method = 'POST'>
+                            {% csrf_token %}
+                            <button class="btn-eliminar">Eliminar</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{% url "editar_animal" animal.id_animal %}">
+                            {% csrf_token %}
+                            <button class="btn-editar">Editar</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> X </button>
+        </div>
+    {% endfor %}
+{% endif %}
+
+</div>
+    </div>
+
+{% endblock content %}
