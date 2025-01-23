@@ -21,6 +21,7 @@
             <li><a href="{% url "home" %}" class="link">Home</a></li>
             <li><a href="#" class="link">Habitats</a></li>
             <li><a href="#" class="link">Especies</a></li>
+            <li><a href="{% url "comprar_entradas" %}" class="link">Comprar entradas</a></li>
             <li><a href="{% url "registro" %}" class="link">Registro</a></li>
             <li><a href="{% url "login" %}" class="link">Login</a></li>
         </ul>
@@ -99,11 +100,11 @@
             </div>
         </div>
 
-        <a href="#"class="ticket">
+        <a href="{% url "carrito" %}"class="ticket">
             <div class="icon">
                 <i class="fas fa-ticket-alt"></i>
             </div>
-            <span class="carrito-notificacion">0</span>
+            <span class="carrito-notificacion">{{carrito_contador}}</span>
         </a>
     </nav>
 

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'carrito.css' %}">
+
+<section class="cart">
+    <h2>Mi carrito</h2>
+    <div class="container">
+        <!-- Carrito -->
+        <div class="contenido">
+            <aside class="aside">
+                <div class="card">
+                    <table class="carrito-table">
+                        <thead class="text-muted">
+                            <tr class="small text-uppercase">
+                                <th scope="col">Producto</th>
+                                <th scope="col" width="120">Cantidad</th>
+                                <th scope="col" width="120">Precio</th>
+                                <th scope="col" class="text-right" width="200">Total</th>
+                                <th scope="col" class="text-right" width="120">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in carrito_items %}
+                            <tr>
+                                <td>
+                                    <div class="nombre_entrada">
+                                        {{ item.entrada|upper }}
+                                    </div>
+                                </td>
+                                <td>
+                                    <!-- Botones para ajustar cantidad -->
+                                    <div class="input-group">
+                                        <button type="button" class="btn btn-decrease" 
+                                                onclick="window.location.href='{% url 'restar_item_carrito' item.entrada.id_entrada %}'">-</button>
+                                        <input type="text" class="form-control" value="{{ item.cantidad }}" readonly>
+                                        <button type="button" class="btn btn-increase" 
+                                                onclick="window.location.href='{% url 'agregar_carrito' item.entrada.id_entrada %}'">+</button>
+                                    </div>
+                                </td>
+                                <td>${{ item.entrada.precio_formateado }}</td>
+                                <td>${{ item.entrada.precio_formateado }}</td>
+                                <td class="text-right">
+                                    <!-- Botón de eliminar producto -->
+                                    <a href="{% url 'eliminar_carrito_item' item.entrada.id_entrada %}" class="btn btn-danger">Eliminar</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </aside>
+
+            <aside class="info_precio">
+                <div class="card">
+                    <div class="card-body">
+                        <dl class="dlist-align">
+                            <dt>Precio Total:</dt>
+                            <dd class="text-right">${{ total}}</dd>
+                        </dl>
+                        <dl class="dlist-align">
+                            <dt>IVA (19%):</dt>
+                            <dd class="text-right">${{ IVA}}</dd>
+                        </dl>
+                        <dl class="dlist-align">
+                            <dt>Total:</dt>
+                            <dd class="text-right text-dark b"><strong>${{ total}}</strong></dd>
+                        </dl>
+                        <hr>
+                        <p class="img_metodos_pago">
+                            <img src="{% static 'images/metodos_pago.png' %}" alt="Payments">
+                        </p>
+                        <a href="#" class="btn-proceed">Proceder a la compra</a>
+                        <a href="{% url 'comprar_entradas' %}" class="btn-continue">Continuar comprando</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <form class="form_btn" action="{% url "eliminar_carrito"%}">
+        <button class="btn_eliminar_carrito">Eliminar carrito</button>
+    </form>
+</section>
+
+{% endblock %}

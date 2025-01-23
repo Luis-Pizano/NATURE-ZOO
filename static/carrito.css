@@ -1,0 +1,233 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cart {
+    padding: 40px 0;
+    background-color: #ffffff;
+}
+
+.container {
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    margin-top: 35px;
+    color: #343a40;
+}
+
+/* Contenido principal del carrito */
+.contenido {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilo de las tarjetas */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.carrito-table th,
+.carrito-table td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.carrito-table th {
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+.carrito-table td {
+    background-color: #ffffff;
+}
+
+/* Botones de la cantidad */
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input-group .form-control {
+    width: 60px;
+    text-align: center;
+    margin: 0;
+    border-radius: 0;
+}
+
+.input-group .btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.input-group .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo de los botones para eliminar */
+.btn-decrease,
+.btn-increase {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-decrease:hover,
+.btn-increase:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Botones de proceder a la compra */
+.btn-proceed,
+.btn-continue {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    color: white;
+    text-decoration: none;
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-proceed:hover,
+.btn-continue:hover {
+    background-color: #218838;
+}
+
+.btn-continue {
+    background-color: #007bff;
+}
+
+.btn-continue:hover {
+    background-color: #0056b3;
+}
+
+/* Información de precios */
+.dlist-align {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.dlist-align dt {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.dlist-align dd {
+    font-size: 1.1rem;
+}
+
+/* Estilo de la sección de métodos de pago */
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+/* Fondo y padding de los lados */
+.aside,
+.info_precio {
+    flex: 1;
+    margin-left: 30px;
+}
+
+.aside {
+    width: 70%;
+}
+
+.info_precio {
+    width: 28%;
+}
+
+/* Estilo general de la página */
+.section-content {
+    background-color: #f9f9f9;
+}
+
+.img_metodos_pago{
+    height: 30px;
+    width:50px;
+}
+
+.nombre_entrada{
+    display: block;
+    line-height: 30px;
+    font-size: 15px;
+}
+
+.form_btn{
+    margin-bottom: 60px;
+}
+
+.btn_eliminar_carrito{
+    position: absolute;
+    width: 80%;
+    height: 45px;
+    background-color: #dc3545;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    margin-left: 140px;
+}
+
+.btn_eliminar_carrito:hover{
+    background-color: darkred;
+}

@@ -13,7 +13,7 @@ class Entradas(models.Model):
         ordering = ['id_entrada']
         
     def __str__(self):
-        return f"Entrada {self.id_entrada} de tipo {self.id_tipo_entrada} "
+        return f"Entrada de tipo {self.id_tipo_entrada}"
     
     def precio_formateado(self):
         return f"{self.precio:,.0f}".replace(",",".")

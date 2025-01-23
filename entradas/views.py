@@ -43,3 +43,7 @@ def editar_entrada (request,id):
     else:
         form = EntradasEditForm(instance=entrada)
     return render(request,'editar_entrada.html',{'form':form})
+
+def comprar_entradas (request):
+    entradas = Entradas.objects.all()
+    return render(request,'comprar_entradas.html',{'entradas':entradas})
