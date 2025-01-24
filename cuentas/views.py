@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth,messages
-from .forms import RegistarseForms
+from .forms import AccountEditForm, RegistarseForms
 from .models import Account
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 
 def registrarse(request):
     if request.method == 'POST':
@@ -40,3 +41,22 @@ def iniciar_sesion(request):
 def logout(request):
     auth.logout(request)
     return redirect('login')
+
+def listar_cuentas (request):
+    cuentas = Account.objects.all()
+    return render(request, 'listar_cuentas.html', {'cuentas': cuentas})
+
+# @login_required
+def editar_cuenta (request,id):
+    user = Account.objects.get(id=id)
+    if request.method =='POST':
+        form = AccountEditForm(request.POST,instance=user)
+        if form.is_valid():
+            form.save()
+            messages.success(request,f'Cuenta del usuario {user.usuario} actualizada exitosamente.')
+            return redirect('cuentas')
+        else:
+            messages.error(request,'Ocurrio un error al intentar editar la cuenta.')
+    else:
+        form = AccountEditForm(instance=user)
+    return render(request, 'editar_cuenta.html',{'form':form})

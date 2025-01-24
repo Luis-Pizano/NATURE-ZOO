@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "listar_cuentas.css" %}">
+<link rel="stylesheet" href="{% static "alert.css" %}">
+<script src="{% static "js/alert.js" %}"></script>
+
+<div class="container">
+    <div class="contenido">
+        <h2>Cuentas</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Usuario</th>
+                <th>Correo</th>
+                <th>Numero de Telefono</th>    
+                <th>Cuenta Creada El</th>
+                <th>Administrador</th>
+                <th>Visitante</th>
+                <th>Veterinario</th>
+                <th>Cuidador</th>
+                <th>Especialista En Conservación</th>
+                <th>Super Administrador</th>
+                <th>Activo</th>
+                <th>Agregar</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cuenta in cuentas %}
+                <tr>
+                    <td>{{ cuenta.id}}</td>
+                    <td>{{ cuenta.nombre}}</td>
+                    <td>{{ cuenta.apellido_paterno}}</td>
+                    <td>{{ cuenta.apellido_materno}}</td>
+                    <td>{{ cuenta.usuario}}</td>
+                    <td>{{ cuenta.email}}</td>
+                    <td>{{ cuenta.telefono_separado}}</td>
+                    <td>{{ cuenta.date_joined|date:"d/m/y g:i A"}}</td>
+                    <td>
+                        <div class="{% if cuenta.is_admin %}true {% else %}false{% endif %}">
+                            {{ cuenta.is_admin}}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="{% if cuenta.is_visitante %}true{% else %}false{% endif %}">
+                            {{ cuenta.is_visitante}}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="{% if cuenta.is_veterinario %}true{% else %}false{% endif %}">
+                            {{ cuenta.is_veterinario}}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="{% if cuenta.is_cuidador %}true{% else %}false{% endif %}">
+                            {{ cuenta.is_cuidador}}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="{% if cuenta.is_especialista_conservacion %}true{% else %}false{% endif %}">
+                            {{ cuenta.is_especialista_conservacion}}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="{% if cuenta.is_superadmin %}true {% else %}false{% endif %}">
+                            {{ cuenta.is_superadmin}}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="{% if cuenta.is_active %}true {% else %}false{% endif %}">
+                            {{ cuenta.is_active}}
+                        </div>
+                    </td>
+                    <td>
+                        <form action="{% url "registro" %}">
+                            <button class="btn-agregar">Agregar</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{% url "editar_cuenta" cuenta.id %}">
+                            {% csrf_token %}
+                            <button class="btn-editar">Editar</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> X </button>
+        </div>
+    {% endfor %}
+{% endif %}
+
+</div>
+    </div>
+
+{% endblock content %}

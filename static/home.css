@@ -42,7 +42,8 @@ html, body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.6);
+    /* background: transparent; */
     border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);

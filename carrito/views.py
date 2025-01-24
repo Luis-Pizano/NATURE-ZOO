@@ -83,7 +83,7 @@ def restar_item_carrito(request, id):
     entrada = Entradas.objects.get(id_entrada=id)
     try:
         carrito = Carrito.objects.get(carrito_id=carrito_id(request))
-    except Carrito.DoesNotExist:  # Asegúrate de usar "Carrito" con mayúscula
+    except Carrito.DoesNotExist:
         carrito = Carrito.objects.create(carrito_id=carrito_id(request))
     
     carrito.save()
@@ -91,7 +91,10 @@ def restar_item_carrito(request, id):
     try:
         carrito_item = CarritoItem.objects.get(entrada=entrada, carrito=carrito)
         carrito_item.cantidad -= 1
-        carrito_item.save()
+        if carrito_item.cantidad == 0:
+            carrito_item.delete()
+        else:
+            carrito_item.save()
     except CarritoItem.DoesNotExist:
         carrito_item = CarritoItem.objects.create(
             entrada=entrada,

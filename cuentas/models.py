@@ -48,7 +48,7 @@ class Account(AbstractBaseUser):
     date_joined = models.DateTimeField(auto_now_add=True)
     last_login = models.DateTimeField(auto_now_add=True)
     is_admin = models.BooleanField(default=False)
-    is_visitante = models.BooleanField(default=False)
+    is_visitante = models.BooleanField(default=True)
     is_veterinario = models.BooleanField(default=False)
     is_cuidador = models.BooleanField(default=False)
     is_especialista_conservacion = models.BooleanField(default=False)
@@ -66,5 +66,9 @@ class Account(AbstractBaseUser):
 
     def has_module_perms(self, add_label):
         return True
-
+    
+    def telefono_separado(self):
+        telefono = self.numero_telefono
+        return f"{telefono[:1]} {telefono[1:5]} {telefono[5:]}"
+    
     objects = MyAccountManager()

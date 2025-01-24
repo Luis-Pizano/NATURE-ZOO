@@ -21,6 +21,9 @@
             <li><a href="{% url "home" %}" class="link">Home</a></li>
             <li><a href="#" class="link">Habitats</a></li>
             <li><a href="#" class="link">Especies</a></li>
+            {% comment %} {% if user.is_admin %} {% endcomment %}
+            <li><a href="{% url "cuentas" %}" class="link">Cuentas</a></li>
+            {% comment %} {% endif %} {% endcomment %}
             <li><a href="{% url "comprar_entradas" %}" class="link">Comprar entradas</a></li>
             <li><a href="{% url "registro" %}" class="link">Registro</a></li>
             <li><a href="{% url "login" %}" class="link">Login</a></li>

@@ -30,3 +30,22 @@ class RegistarseForms(forms.ModelForm):
             user.save()
         return user
 
+class AccountEditForm(forms.ModelForm):
+    class Meta:
+        model = Account
+        fields = [
+            'nombre', 'apellido_paterno', 'apellido_materno', 'email',
+            'numero_telefono', 'usuario','is_admin','is_visitante','is_veterinario',
+            'is_cuidador','is_especialista_conservacion','is_active','is_superadmin'
+        ]
+        widgets = {
+            'is_admin': forms.CheckboxInput(),
+            'is_visitante': forms.CheckboxInput(),
+            'is_veterinario': forms.CheckboxInput(),
+            'is_cuidador': forms.CheckboxInput(),
+            'is_especialista_conservacion': forms.CheckboxInput(),
+            'is_active': forms.CheckboxInput(),
+            'is_superadmin': forms.CheckboxInput(),
+
+        }
+
