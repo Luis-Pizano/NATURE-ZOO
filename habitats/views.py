@@ -2,6 +2,8 @@ from django.shortcuts import get_object_or_404,redirect,render # type: ignore
 from django.contrib import messages # type: ignore
 from .forms import HabitatsEditForms, HabitatsForms
 from .models import Habitats
+from django.core.paginator import Paginator
+
 
 def agregar_habitats(request):
     if request.method =='POST':
@@ -43,3 +45,14 @@ def editar_habitat(request,nombre):
     else:
         form = HabitatsEditForms(instance=habitat)
     return render(request, 'editar_habitat.html', {'form': form})
+
+def presentacion_habitats (request):
+    habitats = Habitats.objects.all()
+    cant_habitat = pagination(request,habitats,1)
+    return render(request, 'presentar_habitats.html', {'habitats': cant_habitat})
+
+def pagination(request,habitat,num_pages):
+    paginator = Paginator(habitat,num_pages)
+    pagina = request.GET.get('pagina')
+    pagina_habitat = paginator.get_page(pagina)
+    return pagina_habitat

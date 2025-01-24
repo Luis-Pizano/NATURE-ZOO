@@ -19,7 +19,7 @@
     <nav>
         <ul>
             <li><a href="{% url "home" %}" class="link">Home</a></li>
-            <li><a href="#" class="link">Habitats</a></li>
+            <li><a href="{% url "presentacion_habitats" %}" class="link">Habitats</a></li>
             <li><a href="#" class="link">Especies</a></li>
             {% comment %} {% if user.is_admin %} {% endcomment %}
             <li><a href="{% url "cuentas" %}" class="link">Cuentas</a></li>

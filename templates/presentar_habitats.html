@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "presentar_habitats.css" %}">
+
+<div class="container">
+    <div class="contenido">
+        {% for habitat in habitats %}
+        <div class="carta">
+            <img src="{{ habitat.imagen.url }}" alt="{{ habitat.nombre_habitat }}">
+            <h2>{{ habitat.nombre_habitat }}</h2>
+            <p class="descripcion">{{ habitat.descripcion }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="pagination">
+        {% if habitats.has_previous %}
+        <a href="?pagina={{ habitats.previous_page_number }}" class="btn">Anterior</a>
+        {% endif %}
+        
+        <span class="pagina">Página {{ habitats.number }} de {{ habitats.paginator.num_pages }}</span>
+        
+        {% if habitats.has_next %}
+        <a href="?pagina={{ habitats.next_page_number }}" class="btn">Siguiente</a>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock content %}
