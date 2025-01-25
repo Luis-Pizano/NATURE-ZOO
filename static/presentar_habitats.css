@@ -59,11 +59,14 @@ body {
     bottom: 20%;
     font-size: 1.2rem;
     max-width: 80%;
-    top: 200px;
     background: rgba(0, 0, 0, 0.8);
-    padding: 15px 15px;
-
+    padding: 15px;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    font-family: 'Calibri';
 }
+
 
 /* Controles de paginación */
 .pagination {
@@ -82,7 +85,7 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 1rem;
-    transition: background-color 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
 .pagination .btn:hover {

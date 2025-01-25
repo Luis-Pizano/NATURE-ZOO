@@ -2,6 +2,8 @@ from django.shortcuts import get_object_or_404,redirect, render
 from .forms import EspeciesEditForm, EspeciesForm
 from .models import Especies
 from django.contrib import messages
+from django.core.paginator import Paginator
+
 
 def agregar_especies(request):
     if request.method == 'POST':
@@ -46,3 +48,14 @@ def editar_especie(request, nombre):
         form = EspeciesEditForm(instance=especie)
     
     return render(request, 'editar_especie.html', {'form': form})
+
+def presentar_especies (request):
+    especies = Especies.objects.all()
+    especies_pages = pagination(request,especies,1)
+    return render(request,'presentar_especies.html',{'especies':especies_pages})
+
+def pagination(request,especies,num_pages):
+    paginator = Paginator(especies,num_pages)
+    pagina = request.GET.get('pagina')
+    pagina_especies = paginator.get_page(pagina)
+    return pagina_especies

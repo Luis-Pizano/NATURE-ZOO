@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "presentar_habitats.css" %}">
+
+<div class="container">
+    <div class="contenido">
+        {% for especie in especies %}
+        <div class="carta">
+            <img src="{{ especie.imagen.url }}" alt="{{ especie.nombre_especie }}">
+            <h2>{{ especie.nombre_especie }}</h2>
+            <p class="descripcion">{{ especie.descripcion }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="pagination">
+        {% if especies.has_previous %}
+        <a href="?pagina={{ especies.previous_page_number }}" class="btn">Anterior</a>
+        {% endif %}
+        
+        <span class="pagina">Página {{ especies.number }} de {{ especies.paginator.num_pages }}</span>
+        
+        {% if especies.has_next %}
+        <a href="?pagina={{ especies.next_page_number }}" class="btn">Siguiente</a>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock content %}
