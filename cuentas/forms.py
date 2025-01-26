@@ -38,6 +38,16 @@ class AccountEditForm(forms.ModelForm):
             'numero_telefono', 'usuario','is_admin','is_visitante','is_veterinario',
             'is_cuidador','is_especialista_conservacion','is_active','is_superadmin'
         ]
+        labels = {
+            'is_admin':'Administrador',
+            'is_visitante':'Visitante',
+            'is_veterinario':'Veterinario',
+            'is_cuidador':'Cuidador',
+            'is_especialista_conservacion':'Especialista en Conservacion',
+            'is_active':'Cuenta Activa',
+            'is_superadmin':'SuperAdministrador',
+        }
+        
         widgets = {
             'is_admin': forms.CheckboxInput(),
             'is_visitante': forms.CheckboxInput(),

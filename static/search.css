@@ -1,0 +1,106 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo de la página */
+html, body {
+    background: url('images/background_search.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Fija la imagen de fondo */
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    color: #fff; /* Asegura que el texto sea legible sobre el fondo */
+}
+
+/* Títulos principales */
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Mejora la legibilidad */
+}
+
+/* Contenido (grid) */
+.contenido {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem;
+}
+
+/* Cartas (elementos dentro del grid) */
+.carta {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+}
+
+/* Imagen dentro de la carta */
+.carta img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Títulos dentro de las cartas */
+.carta h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0.5rem 0;
+    color: #333;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto hover sobre las cartas */
+.carta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Descripción dentro de las cartas */
+.carta p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+    padding: 1rem;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 1024px) {
+    .contenido {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    }
+}
+
+@media (max-width: 768px) {
+    .contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .carta {
+        margin-bottom: 1rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+}

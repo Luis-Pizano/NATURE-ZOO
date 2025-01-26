@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static "search.css" %}">
+
+<div class="container">
+    <div class="contenido">
+        <h1>Resultados de la búsqueda</h1> 
+    
+        {% if query %}
+        <h3>Resultados para: "{{ query }}"</h3>
+
+        <h4>Especies:</h4>
+        {% if especies_resultado %}
+                {% for especie in especies_resultado %}
+                    <div class="carta">
+                        <h2> {{especie.nombre}} </h2>
+                        <img src="{{especie.imagen.url}}">
+                        <p> {{especie.descripcion}} </p>
+                    </div>
+                {% endfor %}
+        {% else %}
+            <p>No se encontraron especies.</p>
+        {% endif %}
+        
+        <h4>Hábitats:</h4>
+        {% if habitats_resultado %}
+                {% for habitat in habitats_resultado %}
+                <div class="carta">
+                    <h2> {{habitat.nombre}} </h2>
+                    <img src="{{habitat.imagen.url}}">
+                    <p> {{habitat.descripcion}} </p>
+                </div>
+                {% endfor %}
+        {% else %}
+            <p>No se encontraron hábitats.</p>
+        {% endif %}
+    {% else %}
+        <p>Por favor ingrese un término de búsqueda.</p>
+    {% endif %}
+    </div>
+</div>
+{% endblock %}

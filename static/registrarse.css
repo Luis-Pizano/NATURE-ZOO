@@ -15,15 +15,6 @@ html,body{
     min-height: 100vh;
 }
 
-
-.contenido{
-    width: 420px;
-    background-color: purple;
-    padding: 40px 30px;
-    margin-top: 60px;
-    margin-bottom: 10px;
-}
-
 .contenido{
     width: 420px;
     background: transparent;

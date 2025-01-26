@@ -1,5 +1,7 @@
 from django.shortcuts import get_object_or_404,redirect,render # type: ignore
-from django.contrib import messages # type: ignore
+from django.contrib import messages
+
+from especies.models import Especies # type: ignore
 from .forms import HabitatsEditForms, HabitatsForms
 from .models import Habitats
 from django.core.paginator import Paginator
@@ -56,3 +58,14 @@ def pagination(request,habitat,num_pages):
     pagina = request.GET.get('pagina')
     pagina_habitat = paginator.get_page(pagina)
     return pagina_habitat
+
+def search(request):
+    query = request.GET.get('q', '')  # Obtener el valor de la búsqueda desde el query string
+    especies_resultado = Especies.objects.filter(nombre_especie__icontains=query) if query else []
+    habitats_resultado = Habitats.objects.filter(nombre_habitat__icontains=query) if query else []
+    
+    return render(request, 'search.html', {
+        'especies_resultado': especies_resultado,
+        'habitats_resultado': habitats_resultado,
+        'query': query
+    })
