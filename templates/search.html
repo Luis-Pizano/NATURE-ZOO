@@ -1,43 +1,46 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<link rel="stylesheet" href="{% static "search.css" %}">
+<link rel="stylesheet" href="{% static 'search.css' %}">
 
 <div class="container">
-    <div class="contenido">
-        <h1>Resultados de la búsqueda</h1> 
-    
-        {% if query %}
-        <h3>Resultados para: "{{ query }}"</h3>
+    <h1>Resultados de la búsqueda</h1> 
 
-        <h4>Especies:</h4>
+    {% if query %}
+    <h3>Resultados para: "{{ query }}"</h3>
+
+    <h4>Especies:</h4>
+    <div class="contenido">
         {% if especies_resultado %}
-                {% for especie in especies_resultado %}
-                    <div class="carta">
-                        <img src="{{especie.imagen.url}}">
-                        <h2> {{especie.nombre_especie}} </h2>
-                        <p> {{especie.descripcion}} </p>
-                    </div>
-                {% endfor %}
+            {% for especie in especies_resultado %}
+                <div class="carta">
+                    <img src="{{especie.imagen.url}}">
+                    <h2>{{especie.nombre_especie}}</h2>
+                    <p>{{especie.descripcion}}</p>
+                </div>
+            {% endfor %}
         {% else %}
             <p>No se encontraron especies.</p>
         {% endif %}
-        
-        <h4>Hábitats:</h4>
+    </div>  <!-- Cierra el div .contenido para las especies -->
+
+    <h4>Hábitats:</h4>
+    <div class="contenido">  <!-- Aquí empieza el div .contenido para los hábitats -->
         {% if habitats_resultado %}
-                {% for habitat in habitats_resultado %}
+            {% for habitat in habitats_resultado %}
                 <div class="carta">
                     <img src="{{habitat.imagen.url}}">
-                    <h2> {{habitat.nombre_habitat}} </h2>
-                    <p> {{habitat.descripcion}} </p>
+                    <h2>{{habitat.nombre_habitat}}</h2>
+                    <p>{{habitat.descripcion}}</p>
                 </div>
-                {% endfor %}
+            {% endfor %}
         {% else %}
             <p>No se encontraron hábitats.</p>
         {% endif %}
+    </div> <!-- Cierra el div .contenido para los hábitats -->
     {% else %}
         <p>Por favor ingrese un término de búsqueda.</p>
     {% endif %}
-    </div>
 </div>
+
 {% endblock %}
