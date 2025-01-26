@@ -14,8 +14,8 @@
         {% if especies_resultado %}
                 {% for especie in especies_resultado %}
                     <div class="carta">
-                        <h2> {{especie.nombre}} </h2>
                         <img src="{{especie.imagen.url}}">
+                        <h2> {{especie.nombre_especie}} </h2>
                         <p> {{especie.descripcion}} </p>
                     </div>
                 {% endfor %}
@@ -27,8 +27,8 @@
         {% if habitats_resultado %}
                 {% for habitat in habitats_resultado %}
                 <div class="carta">
-                    <h2> {{habitat.nombre}} </h2>
                     <img src="{{habitat.imagen.url}}">
+                    <h2> {{habitat.nombre_habitat}} </h2>
                     <p> {{habitat.descripcion}} </p>
                 </div>
                 {% endfor %}

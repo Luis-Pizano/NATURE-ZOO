@@ -1,19 +1,15 @@
-/* Reset de estilos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fondo de la página */
 html, body {
     background: url('images/background_search.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed; /* Fija la imagen de fondo */
-    font-family: Arial, sans-serif;
 }
 
-/* Contenedor principal */
 .container {
     display: flex;
     flex-direction: column;
@@ -21,14 +17,13 @@ html, body {
     align-items: center;
     padding: 2rem;
     margin-top: 2rem;
-    color: #fff; /* Asegura que el texto sea legible sobre el fondo */
+    color: #fff;
 }
 
-/* Títulos principales */
 h1 {
     font-size: 2rem;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Mejora la legibilidad */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* Contenido (grid) */
@@ -84,7 +79,7 @@ h1 {
     padding: 1rem;
 }
 
-/* Media Queries para Responsividad */
+
 @media (max-width: 1024px) {
     .contenido {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
