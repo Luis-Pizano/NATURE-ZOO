@@ -2,6 +2,8 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static "home.css" %}">
+<link rel="stylesheet" href="{% static "alert.css" %}">
+<script src="{% static "js/alert.js" %}"></script>
 
 <div class="container">
     <div class="saludo">
@@ -25,6 +27,15 @@
         </div>
     </div>
 </div>
-
+<div class="mensajes_login">
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> X </button>
+        </div>
+    {% endfor %}
+{% endif %}
+</div>
 
 {% endblock content %}

@@ -46,7 +46,7 @@ def listar_cuentas (request):
     cuentas = Account.objects.all()
     return render(request, 'listar_cuentas.html', {'cuentas': cuentas})
 
-# @login_required
+@login_required
 def editar_cuenta (request,id):
     user = Account.objects.get(id=id)
     if request.method =='POST':

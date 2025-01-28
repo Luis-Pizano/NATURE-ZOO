@@ -60,6 +60,14 @@ html, body {
     font-family: 'Calibri'; /* Letra Calibri para etiqueta p */
 }
 
+.mensajes_login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
 @media screen and (max-width:768px){
     .contenido{
         display: grid;

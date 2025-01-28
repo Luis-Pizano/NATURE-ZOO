@@ -117,3 +117,28 @@ form p input[type='Checkbox']{
     background: darkred;
     transition: all 0.3s ease;
 }
+
+@media screen and (max-width: 768px) {
+    .contenido {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        border: solid 2px rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(20px);
+        border-radius: 15px;
+        padding: 40px 30px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        margin-bottom: 10px;
+        margin-top: 60px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column; /* Asegura disposición en columna */
+    }
+    form p {
+        flex: 1 1 calc(100% - 15px); /* Cada campo ocupa el 25% del ancho menos el gap */
+        max-width: calc(100% - 15px);
+        margin: 0;
+    }
+
+}

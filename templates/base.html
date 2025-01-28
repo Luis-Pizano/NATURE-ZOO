@@ -21,12 +21,20 @@
             <li><a href="{% url "home" %}" class="link">Home</a></li>
             <li><a href="{% url "presentacion_habitats" %}" class="link">Habitats</a></li>
             <li><a href="{% url "presentar_especies" %}" class="link">Especies</a></li>
-            {% comment %} {% if user.is_admin %} {% endcomment %}
-            <li><a href="{% url "cuentas" %}" class="link">Cuentas</a></li>
-            {% comment %} {% endif %} {% endcomment %}
+
             <li><a href="{% url "comprar_entradas" %}" class="link">Comprar entradas</a></li>
+            {% if not user.is_authenticated %}
             <li><a href="{% url "registro" %}" class="link">Registro</a></li>
             <li><a href="{% url "login" %}" class="link">Login</a></li>
+            {% else %}
+            <!-- IF user es authenticated -->
+            <!-- IF user es authenticated y es admin o superadmin mostrar link cuentas -->
+            {% if user.is_admin or user.is_superadmin %}
+            <li><a href="{% url "cuentas" %}" class="link">Cuentas</a></li>
+            {% endif %} <!-- ENDIF user es authenticated y es admin o superadmin mostrar link cuentas -->
+            <!-- IF user es authenticated mostrar LOGOUT-->
+            <li><a href="{% url "logout" %}" class="link">Logout</a></li>
+            {% endif %}
         </ul>
 
 
@@ -41,6 +49,8 @@
             </div>
         </form>
 
+        {% if user.is_authenticated %}
+        {% if user.is_admin or user.is_superadmin %}
         <div class="dropdown">
             <a class="admin_link">Agregar</a>
             <div class="dropdown-content">
@@ -102,6 +112,10 @@
                 <a href="{% url "listar_ventas" %}">Listar Ventas</a>
             </div>
         </div>
+        <!--  END IF de user.is_admin or user.is_superadmin-->
+        {% endif %}
+        <!--  END IF de user.is_authenticated-->
+        {% endif %}
 
         <a href="{% url "carrito" %}"class="ticket">
             <div class="icon">
