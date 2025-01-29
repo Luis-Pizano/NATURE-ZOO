@@ -66,9 +66,11 @@ def search(request):
     query = request.GET.get('q', '')
     especies_resultado = Especies.objects.filter(nombre_especie__icontains=query).order_by('nombre_especie') if query else []
     habitats_resultado = Habitats.objects.filter(nombre_habitat__icontains=query).order_by('nombre_habitat') if query else []
+    total_resultados = len(especies_resultado) + len(habitats_resultado)
     
     return render(request, 'search.html', {
         'especies_resultado': especies_resultado,
         'habitats_resultado': habitats_resultado,
+        'total_resultados': total_resultados,
         'query': query
     })
