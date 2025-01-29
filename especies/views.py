@@ -52,7 +52,7 @@ def editar_especie(request, nombre):
     return render(request, 'editar_especie.html', {'form': form})
 
 def presentar_especies (request):
-    especies = Especies.objects.all()
+    especies = Especies.objects.all().order_by('nombre_especie')
     especies_pages = pagination(request,especies,1)
     return render(request,'presentar_especies.html',{'especies':especies_pages})
 
@@ -63,9 +63,9 @@ def pagination(request,especies,num_pages):
     return pagina_especies
 
 def search(request):
-    query = request.GET.get('q', '')  # Obtener el valor de la búsqueda desde el query string
-    especies_resultado = Especies.objects.filter(nombre_especie__icontains=query) if query else []
-    habitats_resultado = Habitats.objects.filter(nombre_habitat__icontains=query) if query else []
+    query = request.GET.get('q', '')
+    especies_resultado = Especies.objects.filter(nombre_especie__icontains=query).order_by('nombre_especie') if query else []
+    habitats_resultado = Habitats.objects.filter(nombre_habitat__icontains=query).order_by('nombre_habitat') if query else []
     
     return render(request, 'search.html', {
         'especies_resultado': especies_resultado,
