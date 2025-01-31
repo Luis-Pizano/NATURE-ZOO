@@ -18,9 +18,11 @@
                         <th>Imagen de Especie</th>
                         <th>Alimentación de la Especie</th>
                         <th>Descripción de la Especie</th>
+                        {% if user.is_superadmin or user.is_admin %}
                         <th>Agregar</th>
                         <th>Eliminar</th>
                         <th>Editar</th>
+                        {% endif %}
                     </tr>
                 </thead>
                 <tbody>
@@ -37,6 +39,7 @@
                                     {{especie.descripcion}}
                                 </div>
                             </td>
+                            {% if user.is_superadmin or user.is_admin %}
                             <td>
                                 <form action="{% url 'agregar_especies' %}">
                                     <button class="btn-agregar">Agregar</button>
@@ -54,6 +57,7 @@
                                     <button class="btn-editar">Editar</button>
                                 </form>
                             </td>
+                            {% endif %}
                         </tr>
                     {% endfor %}
                 </tbody>

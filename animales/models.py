@@ -23,6 +23,7 @@ class Animales(models.Model):
     id_zona = models.ForeignKey(Zonas,on_delete=models.PROTECT)
     id_fuente_origen = models.ForeignKey(FuentesOrigen,on_delete=models.PROTECT)
     fecha_nacimiento = models.DateField(null=True)
+    descripcion = models.CharField(max_length=555)
     
     class Meta:
         db_table = 'animales'

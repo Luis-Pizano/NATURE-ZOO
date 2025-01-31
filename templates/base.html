@@ -22,7 +22,10 @@
             <li><a href="{% url "presentacion_habitats" %}" class="link">Habitats</a></li>
             <li><a href="{% url "presentar_especies" %}" class="link">Especies</a></li>
 
+            {% if user.is_visitante or user.is_admin or user.is_superadmin%}
             <li><a href="{% url "comprar_entradas" %}" class="link">Comprar entradas</a></li>
+            {% endif %}
+
             {% if not user.is_authenticated %}
             <li><a href="{% url "registro" %}" class="link">Registro</a></li>
             <li><a href="{% url "login" %}" class="link">Login</a></li>
@@ -114,15 +117,56 @@
         </div>
         <!--  END IF de user.is_admin or user.is_superadmin-->
         {% endif %}
-        <!--  END IF de user.is_authenticated-->
+        {% if user.is_veterinario %}
+        <div class="profiles">
+            <a class="admin_link">Veterinarios</a>
+            <div class="dropdown_profiles">
+                <a href="{% url "agregar_alimentacion" %}" class="{% if request.path == '/Tipo_alimentación/tipo_alimentación/' %}active_menu{% endif %}">Agregar Tipos de Alimentación</a>
+                <a href="{% url "agregar_estado_salud" %}" class="{% if request.path == '/Estado_salud/agregar_estado_salud/' %}active_menu{% endif %}">Agregar Estados de Salud</a>
+                <a href="{% url "listar_estados_salud" %}" class="{% if request.path == '/Estado_salud/listar_estado_salud/' %}active_menu{% endif %}">Listar Estados de Salud</a>
+                <a href="{% url "listar_alimentacion" %}" class="{% if request.path == '/Tipo_alimentación/listar_tipo_alimentación/' %}active_menu{% endif %}">Listar Tipos de Alimentación</a>
+                <a href="{% url "listar_animales" %}" class="{% if request.path == '/Animales/listar_animales/' %}active_menu{% endif %}">Listar Animales</a>
+                <a href="{% url "listar_especies" %}" class="{% if request.path == '/Especies/listar_especies/' %}active_menu{% endif %}">Listar Especies</a>
+                <a href="{% url "listar_habitats" %}" class="{% if request.path == '/Habitats/listar_habitats/' %}active_menu{% endif %}">Listar Habitas</a>
+            </div>
+        {% endif %} <!--  END IF de user.is_veterinario-->
+
+        {% if user.is_cuidador %}
+        <div class="profiles">
+            <a class="admin_link">Cuidadores</a>
+            <div class="dropdown_profiles">
+                <a href="{% url "listar_alimentacion" %}" class="{% if request.path == '/Tipo_alimentación/listar_tipo_alimentación/' %}active_menu{% endif %}">Listar Tipos de Alimentación</a>
+                <a href="{% url "listar_animales" %}" class="{% if request.path == '/Animales/listar_animales/' %}active_menu{% endif %}">Listar Animales</a>
+                <a href="{% url "listar_especies" %}" class="{% if request.path == '/Especies/listar_especies/' %}active_menu{% endif %}">Listar Especies</a>
+                <a href="{% url "listar_habitats" %}" class="{% if request.path == '/Habitats/listar_habitats/' %}active_menu{% endif %}">Listar Habitas</a>
+                <a href="{% url "listar_suministros" %}" class="{% if request.path == '/Suministros/listar_suministros/' %}active_menu{% endif %}">Listar Suministros</a>
+                <a href="{% url "listar_zonas" %}" class="{% if request.path == '/Zonas/listar_zona/' %}active_menu{% endif %}">Listar Zonas</a>
+            </div>
         {% endif %}
 
+        {% if user.is_especialista_conservacion %}
+        <div class="profiles">
+            <a class="admin_link">Esp.Conservación</a>
+            <div class="dropdown_profiles">
+                <a href="{% url "listar_animales" %}" class="{% if request.path == '/Animales/listar_animales/' %}active_menu{% endif %}">Listar Animales</a>
+                <a href="{% url "listar_especies" %}" class="{% if request.path == '/Especies/listar_especies/' %}active_menu{% endif %}">Listar Especies</a>
+                <a href="{% url "listar_habitats" %}" class="{% if request.path == '/Habitats/listar_habitats/' %}active_menu{% endif %}">Listar Habitas</a>
+                <a href="{% url "listar_fuentes_origen" %}" class="{% if request.path == '/Fuentes_origen/listar_fuentes_origen/' %}active_menu{% endif %}">Listar Fuentes de Origen</a>
+                <a href="{% url "listar_estados_salud" %}" class="{% if request.path == '/Estado_salud/listar_estado_salud/' %}active_menu{% endif %}">Listar Estados de Salud</a>
+            </div>
+            {% endif %}
+
+        
+        {% endif %} <!--  END IF de user.is_authenticated-->
+
+        {% if user.is_visitante %}
         <a href="{% url "carrito" %}"class="ticket">
             <div class="icon">
                 <i class="fas fa-ticket-alt"></i>
             </div>
             <span class="carrito-notificacion">{{carrito_contador}}</span>
         </a>
+        {% endif %}
     </nav>
 
 

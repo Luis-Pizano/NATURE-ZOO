@@ -15,7 +15,9 @@
                 <th>ID</th>
                 <th>Nombre de Tipo Alimentación</th>
                 <th>Agregar</th>
+                {% if user.is_superadmin or user.is_admin %}
                 <th>Eliminar</th>
+                {% endif %}
                 <th>Editar</th>
             </tr>
         </thead>
@@ -29,12 +31,14 @@
                             <button class="btn-agregar">Agregar</button>
                         </form>
                     </td>
+                    {% if user.is_superadmin or user.is_admin %}
                     <td>
                         <form action="{% url "eliminar_tipo_alimentacion" tipo.id_tipo_alimentacion %}" method = 'POST'>
                             {% csrf_token %}
                             <button class="btn-eliminar">Eliminar</button>
                         </form>
                     </td>
+                    {% endif %}
                     <td>
                         <form action="{% url "editar_tipo_alimentacion" tipo.nombre_tipo_alimentacion %}">
                             {% csrf_token %}

@@ -24,8 +24,11 @@
                 <th>Zona</th>
                 <th>Fuente de Origen</th>
                 <th>Fecha de Nacimiento</th>
+                <th>Descripción</th>
+                {% if user.is_superadmin or user.is_admin %}
                 <th>Agregar</th>
                 <th>Eliminar</th>
+                {% endif %}
                 <th>Editar</th>
             </tr>
         </thead>
@@ -45,6 +48,13 @@
                     <td>{{ animal.id_fuente_origen}}</td>
                     <td>{{ animal.fecha_nacimiento}}</td>
                     <td>
+                        <div class="descripcion">
+                            {{ animal.descripcion}}
+                        </div>
+                    </td>
+
+                    {% if user.is_superadmin or user.is_admin %}
+                    <td>
                         <form action="{% url "agregar_animales" %}">
                             <button class="btn-agregar">Agregar</button>
                         </form>
@@ -55,6 +65,7 @@
                             <button class="btn-eliminar">Eliminar</button>
                         </form>
                     </td>
+                    {% endif %}
                     <td>
                         <form action="{% url "editar_animal" animal.id_animal %}">
                             {% csrf_token %}

@@ -16,9 +16,15 @@
                 <th>Nombre de Habitat</th>
                 <th>Imagen del Habitat</th>
                 <th>Descripción del Habitat</th>
+                {% if user.is_superadmin or user.is_admin %}
                 <th>Agregar</th>
+                {% endif %}
+                {% if user.is_superadmin or user.is_admin %}
                 <th>Eliminar</th>
+                {% endif %}
+                {% if user.is_superadmin or user.is_admin %}
                 <th>Editar</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -34,23 +40,31 @@
                             {{habitat.descripcion}}
                         </div>
                     </td>
+                    {% if user.is_superadmin or user.is_admin %}
                     <td>
                         <form action="{% url "agregar_habitats" %}">
                             <button class="btn-agregar">Agregar</button>
                         </form>
                     </td>
+                    {% endif %}
+
+                    {% if user.is_superadmin or user.is_admin %}
                     <td>
                         <form action="{% url "eliminar_habitat" habitat.id_habitat%}" method = 'POST'>
                             {% csrf_token %}
                             <button class="btn-eliminar">Eliminar</button>
                         </form>
                     </td>
+                    {% endif %}
+
+                    {% if user.is_superadmin or user.is_admin %}
                     <td>
                         <form action="{% url "editar_habitat" habitat.nombre_habitat %}">
                             {% csrf_token %}
                             <button class="btn-editar">Editar</button>
                         </form>
                     </td>
+                    {% endif %}
                 </tr>
             {% endfor %}
         </tbody>

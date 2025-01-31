@@ -10,6 +10,7 @@ nav{
     align-items: center;
     background: url('images/background_nav.jpg') no-repeat center center;
     background-size: cover;
+    background-attachment: fixed;
     top: 0;
     width: 100%;
     padding: 0.5rem;
@@ -196,20 +197,20 @@ ul li {
     }
 }
 
-.admin_cuentas{
+.profiles{ /* Contenedor Padre */
     position: relative;
     display: inline-block;
     margin-left: auto;
+    margin-right: 50px ;
 }
 
-.admin_cuentas a{
+.profiles .admin_link{ /* TEXTO del contenedor Padre */
     color: white;
-    padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
-.dropdown_cuentas{
+.dropdown_profiles{ /* Contenedor Hijo, Contiene los links del menu */
     display: none; /* Ocultar el menú por defecto */
     position: absolute;
     background-color: #252440;
@@ -223,6 +224,21 @@ ul li {
     transform: translateX(-50%); /* Ajusta para centrar menu desplegable */
 }
 
-.admin_cuentas:hover  .dropdown_cuentas{
+.dropdown_profiles a{
+    color: white;
+    padding: 12px 16px; /* Espaciado interno de los elementos con respecto a su contenedor*/
+    text-decoration: none;
     display: block;
+}
+
+.profiles:hover  .dropdown_profiles{
+    display: block;
+}
+
+.dropdown_profiles a:hover{
+    background-color: #2d2c45;
+}
+
+.active_menu{
+    background-color: #414061;
 }
