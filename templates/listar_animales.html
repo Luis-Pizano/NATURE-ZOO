@@ -29,7 +29,9 @@
                 <th>Agregar</th>
                 <th>Eliminar</th>
                 {% endif %}
+                {% if not user.is_especialista_conservacion %}
                 <th>Editar</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -66,12 +68,14 @@
                         </form>
                     </td>
                     {% endif %}
+                    {% if not user.is_especialista_conservacion %}
                     <td>
                         <form action="{% url "editar_animal" animal.id_animal %}">
                             {% csrf_token %}
                             <button class="btn-editar">Editar</button>
                         </form>
                     </td>
+                    {% endif %}
                 </tr>
             {% endfor %}
         </tbody>

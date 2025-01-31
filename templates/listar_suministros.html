@@ -21,7 +21,9 @@
                     <th>Fecha de Compra</th>
                     <th>Ultima Acutualización</th>
                     <th>Agregar</th>
+                    {% if user.is_admin or user.is_superadmin %}
                     <th>Eliminar</th>
+                    {% endif %}
                     <th>Editar</th>
                 </tr>
             </thead>
@@ -41,12 +43,14 @@
                                 <button class="btn-agregar">Agregar</button>
                             </form>
                         </td>
+                        {% if user.is_admin or user.is_superadmin %}
                         <td>
                             <form action="{% url 'eliminar_suministro' suministro.id_suministro %}" method='POST'>
                                 {% csrf_token %}
                                 <button class="btn-eliminar">Eliminar</button>
                             </form>
                         </td>
+                        {% endif %}
                         <td>
                             <form action="{% url 'editar_suministro' suministro.id_suministro %}">
                                 {% csrf_token %}

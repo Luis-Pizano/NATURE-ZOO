@@ -15,9 +15,11 @@
                 <th>ID</th>
                 <th>Nombre de Fuente de Origen</th>
                 <th>Tipo de Entidad</th>
+                {% if not user.is_especialista_conservacion %}
                 <th>Agregar</th>
                 <th>Eliminar</th>
                 <th>Editar</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -26,6 +28,7 @@
                     <td>{{ fuente.id_fuente_origen }}</td>
                     <td>{{ fuente.nombre_fuente_origen}}</td>
                     <td>{{ fuente.id_tipo_entidad}}</td>
+                    {% if not user.is_especialista_conservacion %}
                     <td>
                         <form action="{% url "agregar_fuente_origen" %}">
                             <button class="btn-agregar">Agregar</button>
@@ -43,6 +46,7 @@
                             <button class="btn-editar">Editar</button>
                         </form>
                     </td>
+                    {% endif %}
                 </tr>
             {% endfor %}
         </tbody>

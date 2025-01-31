@@ -15,11 +15,13 @@
                 <th>ID</th>
                 <th>Nombre de estado de salud</th>
                 <th>Descripción de estado de salud</th>
+                {% if not user.is_especialista_conservacion %}
                 <th>Agregar</th>
                 {% if user.is_superadmin or user.is_admin %}
                 <th>Eliminar</th>
                 {% endif %}
                 <th>Editar</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -32,6 +34,7 @@
                             {{ estado.descripcion}}
                         </div>
                     </td>
+                    {% if not user.is_especialista_conservacion %}
                     <td>
                         <form action="{% url "agregar_estado_salud" %}">
                             <button class="btn-agregar">Agregar</button>
@@ -51,6 +54,7 @@
                             <button class="btn-editar">Editar</button>
                         </form>
                     </td>
+                    {% endif %}
                 </tr>
             {% endfor %}
         </tbody>

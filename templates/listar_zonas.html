@@ -15,9 +15,11 @@
                 <th>ID</th>
                 <th>Nombre de Zona</th>
                 <th>Nombre del Tipo de Zona</th>
+                {% if user.is_admin or user.is_superadmin %}
                 <th>Agregar</th>
                 <th>Eliminar</th>
                 <th>Editar</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -26,6 +28,7 @@
                     <td>{{zona.id_zona}}</td>
                     <td>{{zona.nombre_zona}}</td>
                     <td>{{ zona.id_tipo_zona }}</td>
+                    {% if user.is_admin or user.is_superadmin %}
                     <td>
                         <form action="{% url "agregar_zona" %}">
                             <button class="btn-agregar">Agregar</button>
@@ -43,6 +46,7 @@
                             <button class="btn-editar">Editar</button>
                         </form>
                     </td>
+                    {% endif %}
                 </tr>
             {% endfor %}
         </tbody>
