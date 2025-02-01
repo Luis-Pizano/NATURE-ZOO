@@ -52,6 +52,7 @@ class Account(AbstractBaseUser):
     is_veterinario = models.BooleanField(default=False)
     is_cuidador = models.BooleanField(default=False)
     is_especialista_conservacion = models.BooleanField(default=False)
+    is_vendedor = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     is_superadmin = models.BooleanField(default=False)
     

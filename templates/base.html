@@ -129,6 +129,7 @@
                 <a href="{% url "listar_especies" %}" class="{% if request.path == '/Especies/listar_especies/' %}active_menu{% endif %}">Listar Especies</a>
                 <a href="{% url "listar_habitats" %}" class="{% if request.path == '/Habitats/listar_habitats/' %}active_menu{% endif %}">Listar Habitas</a>
             </div>
+        </div>
         {% endif %} <!--  END IF de user.is_veterinario-->
 
         {% if user.is_cuidador %}
@@ -142,6 +143,7 @@
                 <a href="{% url "listar_suministros" %}" class="{% if request.path == '/Suministros/listar_suministros/' %}active_menu{% endif %}">Listar Suministros</a>
                 <a href="{% url "listar_zonas" %}" class="{% if request.path == '/Zonas/listar_zona/' %}active_menu{% endif %}">Listar Zonas</a>
             </div>
+        </div>
         {% endif %}
 
         {% if user.is_especialista_conservacion %}
@@ -154,7 +156,19 @@
                 <a href="{% url "listar_fuentes_origen" %}" class="{% if request.path == '/Fuentes_origen/listar_fuentes_origen/' %}active_menu{% endif %}">Listar Fuentes de Origen</a>
                 <a href="{% url "listar_estados_salud" %}" class="{% if request.path == '/Estado_salud/listar_estado_salud/' %}active_menu{% endif %}">Listar Estados de Salud</a>
             </div>
-            {% endif %}
+        </div>
+        {% endif %}
+
+        {% if user.is_vendedor %}
+        <div class="profiles">
+            <a class="admin_link">Vendedores</a>
+            <div class="dropdown_profiles"><a href="{% url "agregar_visitante" %}" class="{% if request.path == '/Visitantes/agregar_visitante/' %}active_menu{% endif %}">Agregar Visitante</a>
+                <a href="{% url "agregar_venta" %}" class="{% if request.path == '/Ventas/agregar_venta/' %}active_menu{% endif %}">Agregar Venta</a>
+                <a href="{% url "listar_ventas" %}" class="{% if request.path == '/Ventas/listar_ventas/' %}active_menu{% endif %}">Listar Ventas</a>
+                <a href="{% url "listar_entradas" %}" class="{% if request.path == '/Entradas/listar_entradas/' %}active_menu{% endif %}">Listar Entradas</a>
+            </div>
+        </div>
+        {% endif %}
 
         
         {% endif %} <!--  END IF de user.is_authenticated-->

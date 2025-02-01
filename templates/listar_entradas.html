@@ -15,9 +15,11 @@
                 <th>ID</th>
                 <th>Tipo de Entrada</th>
                 <th>Precio</th>
+                {% if user.is_admin or user.is_superadmin %}
                 <th>Agregar</th>
                 <th>Eliminar</th>
                 <th>Editar</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -26,6 +28,7 @@
                     <td>{{ entrada.id_entrada}}</td>
                     <td>{{ entrada.id_tipo_entrada}}</td>
                     <td>{{ entrada.precio_formateado}}</td>
+                    {% if user.is_admin or user.is_superadmin %}
                     <td>
                         <form action="{% url "agregar_entrada" %}">
                             <button class="btn-agregar">Agregar</button>
@@ -43,6 +46,7 @@
                             <button class="btn-editar">Editar</button>
                         </form>
                     </td>
+                    {% endif %}
                 </tr>
             {% endfor %}
         </tbody>

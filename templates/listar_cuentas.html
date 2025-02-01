@@ -25,6 +25,7 @@
                 <th>Veterinario</th>
                 <th>Cuidador</th>
                 <th>Especialista En Conservación</th>
+                <th>Vendedor</th>
                 <th>Super Administrador</th>
                 <th>Activo</th>
                 <th>Agregar</th>
@@ -68,6 +69,11 @@
                         </div>
                     </td>
                     <td>
+                        <div class="{% if cuenta.is_especialista_conservacion %}true{% else %}false{% endif %}">
+                            {{ cuenta.is_vendedor}}
+                        </div>
+                    </td>
+                    <td>
                         <div class="{% if cuenta.is_superadmin %}true {% else %}false{% endif %}">
                             {{ cuenta.is_superadmin}}
                         </div>
@@ -78,7 +84,7 @@
                         </div>
                     </td>
                     <td>
-                        <form action="{% url "registro" %}">
+                        <form action="{% url "registrar_cuentas" %}">
                             <button class="btn-agregar">Agregar</button>
                         </form>
                     </td>

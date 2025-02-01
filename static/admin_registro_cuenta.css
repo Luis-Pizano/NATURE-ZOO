@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    background: url('images/background_registrarse.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.contenido {
+    width: 90%;
+    max-width: 1500px;
+    background: rgba(0, 0, 0, 0.6);
+    border: solid 2px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    margin-top: 60px;
+}
+
+.contenido h2{
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+    margin: 15px 15px;
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+form p {
+    flex: 1 1 calc(25% - 15px);
+    max-width: calc(25% - 15px);
+    margin: 0;
+}
+
+form p label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #fff;
+    text-align: center;
+}
+
+form p input{
+    width: 100%;
+    height: 40px;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    background-color: #616161;
+    color: #fff;
+    padding: 0 15px;
+    font-size: 16px;
+    outline: none;
+}
+
+form p input:focus,
+form p select:focus {
+    border-color: #fff;
+}
+
+form p input[type='Checkbox']{
+    accent-color: #4caf50;
+}
+
+.contenido .btn-submit {
+    width: 100%;
+    height: 45px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-submit:hover {
+    background-color: #ddd;
+}
