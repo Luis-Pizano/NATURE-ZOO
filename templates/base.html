@@ -22,7 +22,7 @@
             <li><a href="{% url "presentacion_habitats" %}" class="link">Habitats</a></li>
             <li><a href="{% url "presentar_especies" %}" class="link">Especies</a></li>
 
-            {% if user.is_visitante or user.is_admin or user.is_superadmin%}
+            {% if user.is_visitante or user.is_admin or user.is_superadmin or not user.is_authenticated %}
             <li><a href="{% url "comprar_entradas" %}" class="link">Comprar entradas</a></li>
             {% endif %}
 
@@ -173,7 +173,7 @@
         
         {% endif %} <!--  END IF de user.is_authenticated-->
 
-        {% if user.is_visitante %}
+        {% if user.is_visitante or not user.is_authenticated %}
         <a href="{% url "carrito" %}"class="ticket">
             <div class="icon">
                 <i class="fas fa-ticket-alt"></i>
