@@ -56,6 +56,9 @@ body {
 }
 
 .carta .descripcion {
+    max-height: 350px;
+    overflow-y: auto;
+    overflow-x: hidden;
     bottom: 20%;
     font-size: 1.2rem;
     max-width: 80%;
@@ -65,6 +68,26 @@ body {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
     border-radius: 15px;
     font-family: 'Calibri';
+}
+
+/* Personalización del scrollbar */
+.carta .descripcion::-webkit-scrollbar {
+    width: 8px; /* Ancho del scrollbar */
+}
+
+.carta .descripcion::-webkit-scrollbar-thumb {
+    background-color: #50C878; /* Color esmeralda */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición de color */
+}
+
+.carta .descripcion::-webkit-scrollbar-thumb:hover {
+    background-color: #2e8b57; /* Un tono más oscuro de esmeralda para el hover */
+}
+
+.carta .descripcion::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Fondo del track */
+    border-radius: 10px;
 }
 
 
