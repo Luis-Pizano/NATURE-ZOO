@@ -128,7 +128,7 @@ ul li {
     display: none; /* Ocultar el menú por defecto */
     position: absolute;
     background-color: #252440;
-    min-width: 160px;
+    min-width: 220px;
     max-height: 300px; 
     overflow-y: auto; /* Habilita el scroll si hay demasiados elementos */
     z-index: 1;
@@ -161,7 +161,7 @@ ul li {
 }
 
 .dropdown-list{
-    margin-right: 69px;
+    margin-right: 89px;
     position: relative;
 }
 
@@ -206,20 +206,21 @@ ul li {
     position: relative;
     display: inline-block;
     margin-left: auto;
-    margin-right: 50px ;
+    margin-right: 82px;
 }
 
 .profiles .admin_link{ /* TEXTO del contenedor Padre */
     color: white;
     text-decoration: none;
     display: block;
+    margin-right: 42px;
 }
 
 .dropdown_profiles{ /* Contenedor Hijo, Contiene los links del menu */
     display: none; /* Ocultar el menú por defecto */
     position: absolute;
     background-color: #252440;
-    min-width: 160px;
+    min-width: 220px;
     max-height: 300px; 
     overflow-y: auto; /* Habilita el scroll si hay demasiados elementos */
     z-index: 1;
@@ -246,4 +247,9 @@ ul li {
 
 .active_menu{
     background-color: #414061;
+}
+
+a .icono_link{
+    color: #fff;
+    margin-right: 15px;
 }

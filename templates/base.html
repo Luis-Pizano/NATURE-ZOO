@@ -13,6 +13,8 @@
      <!-- ================================= ICONO ================================== --> 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 
 </head>
 <body>
@@ -57,62 +59,62 @@
         <div class="dropdown">
             <a class="admin_link">Agregar</a>
             <div class="dropdown-content">
-                <a href="{% url "agregar_animales" %}" class="{% if request.path == '/Animales/agregar_animales/' %}active_menu{% endif %}">Agregar Animales</a>
-                <a href="{% url "agregar_continentes" %}" class="{% if request.path == '/Continentes/agregar_continentes/' %}active_menu{% endif %}">Agregar Continentes</a>
-                <a href="{% url "agregar_pais" %}" class="{% if request.path == '/Paises/agregar_pais/' %}active_menu{% endif %}">Agregar Paises</a>
-                <a href="{% url "agregar_tipo_entidad" %}" class="{% if request.path == '/Tipo_entidad/agregar_tipo_entidad/' %}active_menu{% endif %}">Agregar Tipos de Entidades</a>
-                <a href="{% url "agregar_tipo_proveedor" %}" class="{% if request.path == '/Tipo_proveedor/agregar_tipo_proveedor/' %}active_menu{% endif %}">Agregar Tipos de Proveedor</a>
-                <a href="{% url "agregar_tipo_empleado" %}" class="{% if request.path == '/Tipo_empleado/agregar_tipo_empleado/' %}active_menu{% endif %}">Agregar Tipos de Empleados</a>
-                <a href="{% url "agregar_tipo_suministro" %}" class="{% if request.path == '/Tipo_suministro/agregar_tipo_suministro/' %}active_menu{% endif %}">Agregar Tipos de Suministros</a>
-                <a href="{% url "agregar_metodo_pago" %}" class="{% if request.path == '/Metodos_pago/agregar_metodo_pago/' %}active_menu{% endif %}">Agregar Metodos de Pago</a>
-                <a href="{% url "agregar_tipo_entrada" %}" class="{% if request.path == '/Tipo_entrada/agregar_tipo_entrada/' %}active_menu{% endif %}">Agregar Tipos de Entradas</a>
-                <a href="{% url "agregar_sexo" %}" class="{% if request.path == '/Genero/agregar_sexo/' %}active_menu{% endif %}">Agregar Sexo</a>
-                <a href="{% url "agregar_alimentacion" %}" class="{% if request.path == '/Tipo_alimentación/tipo_alimentación/' %}active_menu{% endif %}">Agregar Tipos de Alimentación</a>
-                <a href="{% url "agregar_habitats" %}" class="{% if request.path == '/Habitats/agregar_habitats/' %}active_menu{% endif %}">Agregar Habitats</a>
-                <a href="{% url "agregar_especies" %}" class="{% if request.path == '/Especies/agregar_especies/' %}active_menu{% endif %}">Agregar Especies</a>
-                <a href="{% url "agregar_tipo_animal" %}" class="{% if request.path == '/Tipo_animal/tipo_animal/' %}active_menu{% endif %}">Agregar Tipos de Animales</a>
-                <a href="{% url "agregar_sub_categoria" %}" class="{% if request.path == '/Subcategoria_animal/agregar_sub_categoria/' %}active_menu{% endif %}">Agregar Subcategorías</a>
-                <a href="{% url "agregar_estado_salud" %}" class="{% if request.path == '/Estado_salud/agregar_estado_salud/' %}active_menu{% endif %}">Agregar Estados de Salud</a>
-                <a href="{% url "agregar_fuente_origen" %}" class="{% if request.path == '/Fuentes_origen/agregar_fuente_origen/' %}active_menu{% endif %}">Agregar Fuentes de Origen</a>
-                <a href="{% url "agregar_tipo_zona" %}" class="{% if request.path == '/Tipos_zonas/agregar_tipo_zona/' %}active_menu{% endif %}">Agregar Tipos de Zonas</a>
-                <a href="{% url "agregar_zona" %}" class="{% if request.path == '/Zonas/agregar_zona/' %}active_menu{% endif %}">Agregar Zonas</a>
-                <a href="{% url "agregar_proveedor" %}" class="{% if request.path == '/Proveedores/agregar_proveedor/' %}active_menu{% endif %}">Agregar Proveedores</a>
-                <a href="{% url "agregar_suministro" %}" class="{% if request.path == '/Suministros/suministro/' %}active_menu{% endif %}">Agregar Suministros</a>
-                <a href="{% url "agregar_empleado" %}" class="{% if request.path == '/Empleados/agregar_empleado/' %}active_menu{% endif %}">Agregar Empleados</a>
-                <a href="{% url "agregar_entrada" %}" class="{% if request.path == '/Entradas/agregar_entrada/' %}active_menu{% endif %}">Agregar Entradas</a>
-                <a href="{% url "agregar_visitante" %}" class="{% if request.path == '/Visitantes/agregar_visitante/' %}active_menu{% endif %}">Agregar Visitante</a>
-                <a href="{% url "agregar_venta" %}" class="{% if request.path == '/Ventas/agregar_venta/' %}active_menu{% endif %}">Agregar Venta</a>
+                <a href="{% url "agregar_animales" %}" class="{% if request.path == '/Animales/agregar_animales/' %}active_menu{% endif %}"><i class="fa-solid fa-paw icono_link"></i>Agregar Animales</a>
+                <a href="{% url "agregar_continentes" %}" class="{% if request.path == '/Continentes/agregar_continentes/' %}active_menu{% endif %}"><i class="fa-solid fa-globe icono_link"></i>Agregar Continentes</a>
+                <a href="{% url "agregar_pais" %}" class="{% if request.path == '/Paises/agregar_pais/' %}active_menu{% endif %}"><i class="fa-solid fa-flag icono_link"></i>Agregar Paises</a>
+                <a href="{% url "agregar_tipo_entidad" %}" class="{% if request.path == '/Tipo_entidad/agregar_tipo_entidad/' %}active_menu{% endif %}"><i class="fas fa-building icono_link"></i>Agregar Tipos de Entidades</a>
+                <a href="{% url "agregar_tipo_proveedor" %}" class="{% if request.path == '/Tipo_proveedor/agregar_tipo_proveedor/' %}active_menu{% endif %}"><i class="fa-solid fa-boxes-packing icono_link"></i>Agregar Tipos de Proveedor</a>
+                <a href="{% url "agregar_tipo_empleado" %}" class="{% if request.path == '/Tipo_empleado/agregar_tipo_empleado/' %}active_menu{% endif %}"><i class="fa-solid fa-address-card icono_link"></i>Agregar Tipos de Empleados</a>
+                <a href="{% url "agregar_tipo_suministro" %}" class="{% if request.path == '/Tipo_suministro/agregar_tipo_suministro/' %}active_menu{% endif %}"><i class="fas fa-bowl-food icono_link"></i> <i class="fas fa-pills icono_link"></i>Agregar Tipos de Suministros</a>
+                <a href="{% url "agregar_metodo_pago" %}" class="{% if request.path == '/Metodos_pago/agregar_metodo_pago/' %}active_menu{% endif %}"><i class="fa-solid fa-money-check-dollar icono_link"></i>Agregar Metodos de Pago</a>
+                <a href="{% url "agregar_tipo_entrada" %}" class="{% if request.path == '/Tipo_entrada/agregar_tipo_entrada/' %}active_menu{% endif %}"><i class="fa-solid fa-ticket icono_link"></i>Agregar Tipos de Entradas</a>
+                <a href="{% url "agregar_sexo" %}" class="{% if request.path == '/Genero/agregar_sexo/' %}active_menu{% endif %}"><i class="fa-solid fa-venus-mars icono_link"></i>Agregar Sexo</a>
+                <a href="{% url "agregar_alimentacion" %}" class="{% if request.path == '/Tipo_alimentación/tipo_alimentación/' %}active_menu{% endif %}"><i class="fa-solid fa-drumstick-bite icono_link"></i>Agregar Tipos de Alimentación</a>
+                <a href="{% url "agregar_habitats" %}" class="{% if request.path == '/Habitats/agregar_habitats/' %}active_menu{% endif %}"><i class="fa-solid fa-tree icono_link"></i>Agregar Habitats</a>
+                <a href="{% url "agregar_especies" %}" class="{% if request.path == '/Especies/agregar_especies/' %}active_menu{% endif %}"><i class="fa-solid fa-paw icono_link"></i>Agregar Especies</a>
+                <a href="{% url "agregar_tipo_animal" %}" class="{% if request.path == '/Tipo_animal/tipo_animal/' %}active_menu{% endif %}"><i class="fa-solid fa-paw icono_link"></i>Agregar Tipos de Animales</a>
+                <a href="{% url "agregar_sub_categoria" %}" class="{% if request.path == '/Subcategoria_animal/agregar_sub_categoria/' %}active_menu{% endif %}"><i class="fa-solid fa-paw icono_link"></i>Agregar Subcategorías</a>
+                <a href="{% url "agregar_estado_salud" %}" class="{% if request.path == '/Estado_salud/agregar_estado_salud/' %}active_menu{% endif %}"><i class="fa-solid fa-suitcase-medical icono_link"></i>Agregar Estados de Salud</a>
+                <a href="{% url "agregar_fuente_origen" %}" class="{% if request.path == '/Fuentes_origen/agregar_fuente_origen/' %}active_menu{% endif %}"><i class="fa-solid fa-globe icono_link"></i>Agregar Fuentes de Origen</a>
+                <a href="{% url "agregar_tipo_zona" %}" class="{% if request.path == '/Tipos_zonas/agregar_tipo_zona/' %}active_menu{% endif %}"><i class="fa-solid fa-paw icono_link"></i>Agregar Tipos de Zonas</a>
+                <a href="{% url "agregar_zona" %}" class="{% if request.path == '/Zonas/agregar_zona/' %}active_menu{% endif %}"><i class="fa-solid fa-paw icono_link"></i>Agregar Zonas</a>
+                <a href="{% url "agregar_proveedor" %}" class="{% if request.path == '/Proveedores/agregar_proveedor/' %}active_menu{% endif %}"><i class="fa-solid fa-user icono_link"></i>Agregar Proveedores</a>
+                <a href="{% url "agregar_suministro" %}" class="{% if request.path == '/Suministros/suministro/' %}active_menu{% endif %}"><i class="fas fa-bowl-food icono_link"></i> <i class="fas fa-pills icono_link"></i>Agregar Suministros</a>
+                <a href="{% url "agregar_empleado" %}" class="{% if request.path == '/Empleados/agregar_empleado/' %}active_menu{% endif %}"><i class="fa-solid fa-address-card icono_link"></i>Agregar Empleados</a>
+                <a href="{% url "agregar_entrada" %}" class="{% if request.path == '/Entradas/agregar_entrada/' %}active_menu{% endif %}"><i class="fa-solid fa-ticket icono_link"></i>Agregar Entradas</a>
+                <a href="{% url "agregar_visitante" %}" class="{% if request.path == '/Visitantes/agregar_visitante/' %}active_menu{% endif %}"><i class="fa-solid fa-user icono_link"></i>Agregar Visitante</a>
+                <a href="{% url "agregar_venta" %}" class="{% if request.path == '/Ventas/agregar_venta/' %}active_menu{% endif %}"><i class="fa-solid fa-cash-register icono_link"></i>Agregar Venta</a>
             </div>
         </div>
 
         <div class="dropdown-list">
             <a class="admin_link">Listados</a>
             <div class="dropdown-content">
-                <a href="{% url "listar_animales" %}" class="{% if request.path == '/Animales/listar_animales/' %}active_menu{% endif %}">Listar Animales</a>
-                <a href="{% url "listar_continentes" %}" class="{% if request.path == '/Continentes/listar_continentes/' %}active_menu{% endif %}">Listar Continentes</a>
-                <a href="{% url "listar_paises" %}" class="{% if request.path == '/Paises/listar_pais/' %}active_menu{% endif %}">Listar Paises</a>
-                <a href="{% url "listar_tipo_entidad" %}" class="{% if request.path == '/Tipo_entidad/listar_tipo_entidad/' %}active_menu{% endif %}">Listar Tipos de Entidades</a>
-                <a href="{% url "listar_tipo_proveedor" %}" class="{% if request.path == '/Tipo_proveedor/listar_tipo_proveedor/' %}active_menu{% endif %}">Listar Tipos de Proveedor</a>
-                <a href="{% url "listar_tipo_empleado" %}" class="{% if request.path == '/Tipo_empleado/listar_tipo_empleado/' %}active_menu{% endif %}">Listar Tipos de Empleados</a>
-                <a href="{% url "listar_tipo_suministro" %}" class="{% if request.path == '/Tipo_suministro/listar_tipo_suministro/' %}active_menu{% endif %}">Listar Tipos de Suministros</a>
-                <a href="{% url "listar_metodos_pago" %}" class="{% if request.path == '/Metodos_pago/listar_metodos_pago/' %}active_menu{% endif %}">Listar Metodos de Pago</a>
-                <a href="{% url "listar_tipo_entrada" %}" class="{% if request.path == '/Tipo_entrada/listar_tipo_entrada/' %}active_menu{% endif %}">Listar Tipos de Entradas</a>
-                <a href="{% url "listar_sexos" %}" class="{% if request.path == '/Genero/listar_sexos/' %}active_menu{% endif %}">Listar Sexos</a>
-                <a href="{% url "listar_alimentacion" %}" class="{% if request.path == '/Tipo_alimentación/listar_tipo_alimentación/' %}active_menu{% endif %}">Listar Tipos de Alimentación</a>
-                <a href="{% url "listar_habitats" %}" class="{% if request.path == '/Habitats/listar_habitats/' %}active_menu{% endif %}">Listar Habitas</a>
-                <a href="{% url "listar_especies" %}" class="{% if request.path == '/Especies/listar_especies/' %}active_menu{% endif %}">Listar Especies</a>
-                <a href="{% url "listar_tipo_animal" %}" class="{% if request.path == '/Tipo_animal/listar_tipo_animal/' %}active_menu{% endif %}">Listar Tipos de Animales</a>
-                <a href="{% url "listar_sub_categorias" %}" class="{% if request.path == '/Subcategoria_animal/listar_sub_categorias/' %}active_menu{% endif %}">Listar Subcategorías</a>
-                <a href="{% url "listar_estados_salud" %}"  class="{% if request.path == '/Estado_salud/listar_estado_salud/' %}active_menu{% endif %}">Listar Estados de Salud</a>
-                <a href="{% url "listar_fuentes_origen" %}" class="{% if request.path == '/Fuentes_origen/listar_fuentes_origen/' %}active_menu{% endif %}">Listar Fuentes de Origen</a>
-                <a href="{% url "listar_tipos_zonas" %}" class="{% if request.path == '/Tipos_zonas/listar_tipo_zona/' %}active_menu{% endif %}">Listar Tipos de Zonas</a>
-                <a href="{% url "listar_zonas" %}" class="{% if request.path == '/Zonas/listar_zona/' %}active_menu{% endif %}">Listar Zonas</a>
-                <a href="{% url "listar_proveedores" %}" class="{% if request.path == '/Proveedores/listar_proveedores/' %}active_menu{% endif %}">Listar Proveedores</a>
-                <a href="{% url "listar_suministros" %}" class="{% if request.path == '/Suministros/listar_suministros/' %}active_menu{% endif %}">Listar Suministros</a>
-                <a href="{% url "listar_empleados" %}" class="{% if request.path == '/Empleados/listar_empleados/' %}active_menu{% endif %}">Listar Empleados</a>
-                <a href="{% url "listar_entradas" %}" class="{% if request.path == '/Entradas/listar_entradas/' %}active_menu{% endif %}">Listar Entradas</a>
-                <a href="{% url "listar_visitantes" %}" class="{% if request.path == '/Visitantes/listar_visitantes/' %}active_menu{% endif %}">Listar Visitantes</a>
-                <a href="{% url "listar_ventas" %}" class="{% if request.path == '/Ventas/listar_ventas/' %}active_menu{% endif %}">Listar Ventas</a>
+                <a href="{% url "listar_animales" %}" class="{% if request.path == '/Animales/listar_animales/' %}active_menu{% endif %}"><i class="fa-solid fa-paw icono_link"></i> Listar Animales</a>
+                <a href="{% url "listar_continentes" %}" class="{% if request.path == '/Continentes/listar_continentes/' %}active_menu{% endif %}"><i class="fa-solid fa-globe icono_link"></i>Listar Continentes</a>
+                <a href="{% url "listar_paises" %}" class="{% if request.path == '/Paises/listar_pais/' %}active_menu{% endif %}"><i class="fa-solid fa-flag icono_link"></i>Listar Paises</a>
+                <a href="{% url "listar_tipo_entidad" %}" class="{% if request.path == '/Tipo_entidad/listar_tipo_entidad/' %}active_menu{% endif %}"><i class="fas fa-building icono_link"></i>Listar Tipos de Entidades</a>
+                <a href="{% url "listar_tipo_proveedor" %}" class="{% if request.path == '/Tipo_proveedor/listar_tipo_proveedor/' %}active_menu{% endif %}"><i class="fa-solid fa-boxes-packing icono_link"></i>Listar Tipos de Proveedor</a>
+                <a href="{% url "listar_tipo_empleado" %}" class="{% if request.path == '/Tipo_empleado/listar_tipo_empleado/' %}active_menu{% endif %}"><i class="fa-solid fa-address-card icono_link"></i>Listar Tipos de Empleados</a>
+                <a href="{% url "listar_tipo_suministro" %}" class="{% if request.path == '/Tipo_suministro/listar_tipo_suministro/' %}active_menu{% endif %}"><i class="fas fa-bowl-food icono_link"></i> <i class="fas fa-pills icono_link"></i>Listar Tipos de Suministros</a>
+                <a href="{% url "listar_metodos_pago" %}" class="{% if request.path == '/Metodos_pago/listar_metodos_pago/' %}active_menu{% endif %}"><i class="fa-solid fa-money-check-dollar icono_link"></i>Listar Metodos de Pago</a>
+                <a href="{% url "listar_tipo_entrada" %}" class="{% if request.path == '/Tipo_entrada/listar_tipo_entrada/' %}active_menu{% endif %}"><i class="fa-solid fa-ticket icono_link"></i>Listar Tipos de Entradas</a>
+                <a href="{% url "listar_sexos" %}" class="{% if request.path == '/Genero/listar_sexos/' %}active_menu{% endif %}"><i class="fa-solid fa-venus-mars icono_link"></i>Listar Sexos</a>
+                <a href="{% url "listar_alimentacion" %}" class="{% if request.path == '/Tipo_alimentación/listar_tipo_alimentación/' %}active_menu{% endif %}"><i class="fa-solid fa-drumstick-bite icono_link"></i>Listar Tipos de Alimentación</a>
+                <a href="{% url "listar_habitats" %}" class="{% if request.path == '/Habitats/listar_habitats/' %}active_menu{% endif %}"><i class="fa-solid fa-tree icono_link"></i>Listar Habitas</a>
+                <a href="{% url "listar_especies" %}" class="{% if request.path == '/Especies/listar_especies/' %}active_menu{% endif %}"><i class="fa-solid fa-paw icono_link"></i>Listar Especies</a>
+                <a href="{% url "listar_tipo_animal" %}" class="{% if request.path == '/Tipo_animal/listar_tipo_animal/' %}active_menu{% endif %}"><i class="fa-solid fa-paw icono_link"></i>Listar Tipos de Animales</a>
+                <a href="{% url "listar_sub_categorias" %}" class="{% if request.path == '/Subcategoria_animal/listar_sub_categorias/' %}active_menu{% endif %}"><i class="fa-solid fa-paw icono_link"></i>Listar Subcategorías</a>
+                <a href="{% url "listar_estados_salud" %}"  class="{% if request.path == '/Estado_salud/listar_estado_salud/' %}active_menu{% endif %}"><i class="fa-solid fa-suitcase-medical icono_link"></i>Listar Estados de Salud</a>
+                <a href="{% url "listar_fuentes_origen" %}" class="{% if request.path == '/Fuentes_origen/listar_fuentes_origen/' %}active_menu{% endif %}"><i class="fa-solid fa-globe icono_link"></i>Listar Fuentes de Origen</a>
+                <a href="{% url "listar_tipos_zonas" %}" class="{% if request.path == '/Tipos_zonas/listar_tipo_zona/' %}active_menu{% endif %}"><i class="fa-solid fa-paw icono_link"></i>Listar Tipos de Zonas</a>
+                <a href="{% url "listar_zonas" %}" class="{% if request.path == '/Zonas/listar_zona/' %}active_menu{% endif %}"><i class="fa-solid fa-paw icono_link"></i>Listar Zonas</a>
+                <a href="{% url "listar_proveedores" %}" class="{% if request.path == '/Proveedores/listar_proveedores/' %}active_menu{% endif %}"><i class="fa-solid fa-user icono_link"></i>Listar Proveedores</a>
+                <a href="{% url "listar_suministros" %}" class="{% if request.path == '/Suministros/listar_suministros/' %}active_menu{% endif %}"><i class="fas fa-bowl-food icono_link"></i> <i class="fas fa-pills icono_link"></i>Listar Suministros</a>
+                <a href="{% url "listar_empleados" %}" class="{% if request.path == '/Empleados/listar_empleados/' %}active_menu{% endif %}"><i class="fa-solid fa-address-card icono_link"></i>Listar Empleados</a>
+                <a href="{% url "listar_entradas" %}" class="{% if request.path == '/Entradas/listar_entradas/' %}active_menu{% endif %}"><i class="fa-solid fa-ticket icono_link"></i>Listar Entradas</a>
+                <a href="{% url "listar_visitantes" %}" class="{% if request.path == '/Visitantes/listar_visitantes/' %}active_menu{% endif %}"><i class="fa-solid fa-user icono_link"></i>Listar Visitantes</a>
+                <a href="{% url "listar_ventas" %}" class="{% if request.path == '/Ventas/listar_ventas/' %}active_menu{% endif %}"><i class="fa-solid fa-cash-register icono_link"></i>Listar Ventas</a>
             </div>
         </div>
         <!--  END IF de user.is_admin or user.is_superadmin-->
@@ -121,13 +123,13 @@
         <div class="profiles">
             <a class="admin_link">Veterinarios</a>
             <div class="dropdown_profiles">
-                <a href="{% url "agregar_alimentacion" %}" class="{% if request.path == '/Tipo_alimentación/tipo_alimentación/' %}active_menu{% endif %}">Agregar Tipos de Alimentación</a>
-                <a href="{% url "agregar_estado_salud" %}" class="{% if request.path == '/Estado_salud/agregar_estado_salud/' %}active_menu{% endif %}">Agregar Estados de Salud</a>
-                <a href="{% url "listar_estados_salud" %}" class="{% if request.path == '/Estado_salud/listar_estado_salud/' %}active_menu{% endif %}">Listar Estados de Salud</a>
-                <a href="{% url "listar_alimentacion" %}" class="{% if request.path == '/Tipo_alimentación/listar_tipo_alimentación/' %}active_menu{% endif %}">Listar Tipos de Alimentación</a>
-                <a href="{% url "listar_animales" %}" class="{% if request.path == '/Animales/listar_animales/' %}active_menu{% endif %}">Listar Animales</a>
-                <a href="{% url "listar_especies" %}" class="{% if request.path == '/Especies/listar_especies/' %}active_menu{% endif %}">Listar Especies</a>
-                <a href="{% url "listar_habitats" %}" class="{% if request.path == '/Habitats/listar_habitats/' %}active_menu{% endif %}">Listar Habitas</a>
+                <a href="{% url "agregar_alimentacion" %}" class="{% if request.path == '/Tipo_alimentación/tipo_alimentación/' %}active_menu{% endif %}"><i class="fa-solid fa-drumstick-bite icono_link"></i>Agregar Tipos de Alimentación</a>
+                <a href="{% url "agregar_estado_salud" %}" class="{% if request.path == '/Estado_salud/agregar_estado_salud/' %}active_menu{% endif %}"><i class="fa-solid fa-suitcase-medical icono_link"></i>Agregar Estados de Salud</a>
+                <a href="{% url "listar_estados_salud" %}" class="{% if request.path == '/Estado_salud/listar_estado_salud/' %}active_menu{% endif %}"><i class="fa-solid fa-suitcase-medical icono_link"></i>Listar Estados de Salud</a>
+                <a href="{% url "listar_alimentacion" %}" class="{% if request.path == '/Tipo_alimentación/listar_tipo_alimentación/' %}active_menu{% endif %}"><i class="fa-solid fa-drumstick-bite icono_link"></i>Listar Tipos de Alimentación</a>
+                <a href="{% url "listar_animales" %}" class="{% if request.path == '/Animales/listar_animales/' %}active_menu{% endif %}"><i class="fa-solid fa-paw icono_link"></i>Listar Animales</a>
+                <a href="{% url "listar_especies" %}" class="{% if request.path == '/Especies/listar_especies/' %}active_menu{% endif %}"><i class="fa-solid fa-paw icono_link"></i>Listar Especies</a>
+                <a href="{% url "listar_habitats" %}" class="{% if request.path == '/Habitats/listar_habitats/' %}active_menu{% endif %}"><i class="fa-solid fa-tree icono_link"></i>Listar Habitas</a>
             </div>
         </div>
         {% endif %} <!--  END IF de user.is_veterinario-->
@@ -136,12 +138,12 @@
         <div class="profiles">
             <a class="admin_link">Cuidadores</a>
             <div class="dropdown_profiles">
-                <a href="{% url "listar_alimentacion" %}" class="{% if request.path == '/Tipo_alimentación/listar_tipo_alimentación/' %}active_menu{% endif %}">Listar Tipos de Alimentación</a>
-                <a href="{% url "listar_animales" %}" class="{% if request.path == '/Animales/listar_animales/' %}active_menu{% endif %}">Listar Animales</a>
-                <a href="{% url "listar_especies" %}" class="{% if request.path == '/Especies/listar_especies/' %}active_menu{% endif %}">Listar Especies</a>
-                <a href="{% url "listar_habitats" %}" class="{% if request.path == '/Habitats/listar_habitats/' %}active_menu{% endif %}">Listar Habitas</a>
-                <a href="{% url "listar_suministros" %}" class="{% if request.path == '/Suministros/listar_suministros/' %}active_menu{% endif %}">Listar Suministros</a>
-                <a href="{% url "listar_zonas" %}" class="{% if request.path == '/Zonas/listar_zona/' %}active_menu{% endif %}">Listar Zonas</a>
+                <a href="{% url "listar_alimentacion" %}" class="{% if request.path == '/Tipo_alimentación/listar_tipo_alimentación/' %}active_menu{% endif %}"><i class="fa-solid fa-drumstick-bite icono_link"></i>Listar Tipos de Alimentación</a>
+                <a href="{% url "listar_animales" %}" class="{% if request.path == '/Animales/listar_animales/' %}active_menu{% endif %}"><i class="fa-solid fa-paw icono_link"></i>Listar Animales</a>
+                <a href="{% url "listar_especies" %}" class="{% if request.path == '/Especies/listar_especies/' %}active_menu{% endif %}"><i class="fa-solid fa-paw icono_link"></i>Listar Especies</a>
+                <a href="{% url "listar_habitats" %}" class="{% if request.path == '/Habitats/listar_habitats/' %}active_menu{% endif %}"><i class="fa-solid fa-tree icono_link"></i>Listar Habitas</a>
+                <a href="{% url "listar_suministros" %}" class="{% if request.path == '/Suministros/listar_suministros/' %}active_menu{% endif %}"><i class="fas fa-bowl-food icono_link"></i> <i class="fas fa-pills icono_link"></i>Listar Suministros</a>
+                <a href="{% url "listar_zonas" %}" class="{% if request.path == '/Zonas/listar_zona/' %}active_menu{% endif %}"><i class="fa-solid fa-paw icono_link"></i>Listar Zonas</a>
             </div>
         </div>
         {% endif %}
@@ -150,11 +152,11 @@
         <div class="profiles">
             <a class="admin_link">Esp.Conservación</a>
             <div class="dropdown_profiles">
-                <a href="{% url "listar_animales" %}" class="{% if request.path == '/Animales/listar_animales/' %}active_menu{% endif %}">Listar Animales</a>
-                <a href="{% url "listar_especies" %}" class="{% if request.path == '/Especies/listar_especies/' %}active_menu{% endif %}">Listar Especies</a>
-                <a href="{% url "listar_habitats" %}" class="{% if request.path == '/Habitats/listar_habitats/' %}active_menu{% endif %}">Listar Habitas</a>
-                <a href="{% url "listar_fuentes_origen" %}" class="{% if request.path == '/Fuentes_origen/listar_fuentes_origen/' %}active_menu{% endif %}">Listar Fuentes de Origen</a>
-                <a href="{% url "listar_estados_salud" %}" class="{% if request.path == '/Estado_salud/listar_estado_salud/' %}active_menu{% endif %}">Listar Estados de Salud</a>
+                <a href="{% url "listar_animales" %}" class="{% if request.path == '/Animales/listar_animales/' %}active_menu{% endif %}"><i class="fa-solid fa-paw icono_link"></i>Listar Animales</a>
+                <a href="{% url "listar_especies" %}" class="{% if request.path == '/Especies/listar_especies/' %}active_menu{% endif %}"><i class="fa-solid fa-paw icono_link"></i>Listar Especies</a>
+                <a href="{% url "listar_habitats" %}" class="{% if request.path == '/Habitats/listar_habitats/' %}active_menu{% endif %}"><i class="fa-solid fa-tree icono_link"></i>Listar Habitas</a>
+                <a href="{% url "listar_fuentes_origen" %}" class="{% if request.path == '/Fuentes_origen/listar_fuentes_origen/' %}active_menu{% endif %}"><i class="fas fa-leaf icono_link"></i>Listar Fuentes de Origen</a>
+                <a href="{% url "listar_estados_salud" %}" class="{% if request.path == '/Estado_salud/listar_estado_salud/' %}active_menu{% endif %}"><i class="fa-solid fa-suitcase-medical icono_link"></i>Listar Estados de Salud</a>
             </div>
         </div>
         {% endif %}
@@ -162,10 +164,11 @@
         {% if user.is_vendedor %}
         <div class="profiles">
             <a class="admin_link">Vendedores</a>
-            <div class="dropdown_profiles"><a href="{% url "agregar_visitante" %}" class="{% if request.path == '/Visitantes/agregar_visitante/' %}active_menu{% endif %}">Agregar Visitante</a>
-                <a href="{% url "agregar_venta" %}" class="{% if request.path == '/Ventas/agregar_venta/' %}active_menu{% endif %}">Agregar Venta</a>
-                <a href="{% url "listar_ventas" %}" class="{% if request.path == '/Ventas/listar_ventas/' %}active_menu{% endif %}">Listar Ventas</a>
-                <a href="{% url "listar_entradas" %}" class="{% if request.path == '/Entradas/listar_entradas/' %}active_menu{% endif %}">Listar Entradas</a>
+            <div class="dropdown_profiles">
+                <a href="{% url "agregar_visitante" %}" class="{% if request.path == '/Visitantes/agregar_visitante/' %}active_menu{% endif %}"><i class="fa-solid fa-user icono_link"></i>Agregar Visitante</a>
+                <a href="{% url "agregar_venta" %}" class="{% if request.path == '/Ventas/agregar_venta/' %}active_menu{% endif %}"><i class="fa-solid fa-cash-register icono_link"></i>Agregar Venta</a>
+                <a href="{% url "listar_ventas" %}" class="{% if request.path == '/Ventas/listar_ventas/' %}active_menu{% endif %}"><i class="fa-solid fa-cash-register icono_link"></i>Listar Ventas</a>
+                <a href="{% url "listar_entradas" %}" class="{% if request.path == '/Entradas/listar_entradas/' %}active_menu{% endif %}"><i class="fa-solid fa-ticket icono_link"></i>Listar Entradas</a>
             </div>
         </div>
         {% endif %}
@@ -176,7 +179,7 @@
         {% if user.is_visitante or not user.is_authenticated %}
         <a href="{% url "carrito" %}"class="ticket">
             <div class="icon">
-                <i class="fas fa-ticket-alt"></i>
+                <i class="fa-solid fa-ticket"></i>
             </div>
             <span class="carrito-notificacion">{{carrito_contador}}</span>
         </a>
