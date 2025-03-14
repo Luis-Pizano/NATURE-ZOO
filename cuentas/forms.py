@@ -60,6 +60,14 @@ class AccountEditForm(forms.ModelForm):
             'is_superadmin': forms.CheckboxInput(),
 
         }
+    def clean_nombre(self):
+        return self.cleaned_data['nombre'].upper()
+
+    def clean_apellido_paterno(self):
+        return self.cleaned_data['apellido_paterno'].upper()
+
+    def clean_apellido_materno(self):
+        return self.cleaned_data['apellido_materno'].upper()
 
 
 class RegistarseAdminForms(forms.ModelForm):

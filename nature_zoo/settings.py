@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-=$n)qh#$az*0=nv89z-lsvp21j6)ux%2%l682ak5+q(nx^xt=d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'nature-zoo']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'nature-zoo','nature-zoo.com','www.nature-zoo.com']
 
 AUTH_USER_MODEL = 'cuentas.Account'
 
