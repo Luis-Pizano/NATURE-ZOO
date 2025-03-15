@@ -77,6 +77,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'nature_zoo.middleware.Custom404Middleware',
 ]
 
 ROOT_URLCONF = 'nature_zoo.urls'
