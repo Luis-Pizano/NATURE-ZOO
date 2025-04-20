@@ -70,27 +70,6 @@ body {
     font-family: 'Calibri';
 }
 
-/* Personalización del scrollbar */
-.carta .descripcion::-webkit-scrollbar {
-    width: 8px; /* Ancho del scrollbar */
-}
-
-.carta .descripcion::-webkit-scrollbar-thumb {
-    background-color: #50C878; /* Color esmeralda */
-    border-radius: 10px; /* Bordes redondeados */
-    transition: background-color 0.3s ease; /* Transición de color */
-}
-
-.carta .descripcion::-webkit-scrollbar-thumb:hover {
-    background-color: #2e8b57; /* Un tono más oscuro de esmeralda para el hover */
-}
-
-.carta .descripcion::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Fondo del track */
-    border-radius: 10px;
-}
-
-
 /* Controles de paginación */
 .pagination {
     position: absolute;
