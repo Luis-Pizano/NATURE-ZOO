@@ -1,6 +1,6 @@
 # NATURE ZOO
 
-Proyecto desarrollado en entorno Windows, utilizando Django. la idea de negocio se basa en la gestión de un zoológico
+Proyecto desarrollado en entornos Windows, utilizando Django. La idea de negocio se basa en la gestión de un zoológico
 
 ---
 
