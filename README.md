@@ -40,7 +40,7 @@ pip install pillow
 
 - Crear usuario para el login
 
-- En settings.py configurar los parámetros de la BBDD como el nombre, host, usuario, contraseña y demás parametros
+- En settings.py configurar los parámetros de la BBDD como el nombre, host, usuario, contraseña y demás parámetros
 
 ```bash
 DATABASES = {
