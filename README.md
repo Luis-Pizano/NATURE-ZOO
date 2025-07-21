@@ -1,5 +1,11 @@
 # NATURE ZOO
 
+<p align="center">
+  <img src="./static/images/favicon.jpeg" alt="Logo de NATURE-ZOO" style="width:auto; height:auto;">
+</p>
+
+---
+
 Proyecto desarrollado en entornos Windows, utilizando Django. La idea de negocio se basa en la gestión de un zoológico
 
 ---
